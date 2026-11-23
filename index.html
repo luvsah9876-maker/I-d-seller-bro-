@@ -1,2283 +1,911 @@
-<!DOCTYPE html>
-<html lang="en" class="dark">
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ID SELLER BRO — Free Fire Diamonds &amp; Premium Store (Premium Edition)</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="theme-color" content="#080611" />
+  <meta name="description" content="Game top-ups, Free Fire diamonds and premium app subscriptions. Nepal market prices in NPR." />
+  <title>ID Seller Bro | Gaming & Premium Store</title>
+  <!-- Load Inter Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Load Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Space Grotesk', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
           },
           colors: {
-            obsidian: '#06080f',
-            panel: '#0c101b',
-            panelElev: '#131929',
-            cyanGlow: '#22d3ee',
-            violetGlow: '#8b5cf6',
-            amberPro: '#f59e0b',
+            cyber: {
+              bg: '#080611',
+              panel: '#121022',
+              card: '#16132b',
+              line: '#30234d',
+              purple: '#a855f7',
+              pink: '#ec4899',
+              cyan: '#22d3ee',
+              gold: '#facc15',
+              muted: '#b8b2ca',
+            }
           },
           boxShadow: {
-            'cyan-pop': '0 0 22px rgba(34, 211, 238, 0.25)',
-            'violet-pop': '0 0 24px rgba(139, 92, 246, 0.28)',
-            'pro-glow': '0 0 28px rgba(245, 158, 11, 0.34)',
+            'neon-purple': '0 0 35px rgba(168, 85, 247, 0.25)',
+            'neon-cyan': '0 0 25px rgba(34, 211, 238, 0.2)',
+            'neon-gold': '0 0 28px rgba(250, 204, 21, 0.35)',
           }
         }
       }
     };
   </script>
-
-  <style>
-    body {
-      background-color: #06080f;
-      color: #f8fafc;
-      background-image:
-        radial-gradient(circle at 10% 8%, rgba(34, 211, 238, 0.14), transparent 36%),
-        radial-gradient(circle at 90% 10%, rgba(139, 92, 246, 0.14), transparent 36%),
-        linear-gradient(to right, rgba(255, 255, 255, 0.022) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
-      background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
-      overflow-x: hidden;
-    }
-
-    .modal-backdrop {
-      backdrop-filter: blur(8px);
-      background-color: rgba(3, 4, 9, 0.82);
-    }
-
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #090c14;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #232b42;
-      border-radius: 9999px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #364266;
-    }
-  </style>
 </head>
-<body class="min-h-screen flex flex-col antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
+<body class="bg-[#080611] text-slate-50 font-sans antialiased selection:bg-purple-500/30 selection:text-yellow-300 overflow-x-hidden"
+      style="background-image: radial-gradient(circle at 85% 0%, rgba(50, 16, 92, 0.75) 0%, transparent 38%), radial-gradient(circle at 0% 35%, rgba(23, 16, 75, 0.75) 0%, transparent 34%);">
 
-  <!-- Toast Notification Stack -->
-  <div id="toastContainer" class="fixed top-5 right-5 z-50 flex flex-col gap-2 max-w-sm w-full pointer-events-none px-4 sm:px-0"></div>
+  <!-- Sticky Navigation Header -->
+  <header class="sticky top-0 z-40 bg-[#080611]/90 border-b border-[#30234d] backdrop-blur-xl">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-[68px] flex items-center justify-between gap-3">
+      <!-- Brand -->
+      <a href="#" class="flex items-center gap-2 font-black tracking-wide text-base sm:text-lg text-white group">
+        <span class="text-yellow-400 text-xl transition-transform duration-200 group-hover:scale-110">👑</span>
+        <span>ID SELLER <span class="text-yellow-400">BRO</span></span>
+      </a>
 
-  <!-- Top Demo Notice Strip -->
-  <div class="bg-gradient-to-r from-cyan-500/15 via-violet-500/15 to-amber-500/15 border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex flex-wrap items-center justify-between gap-2 text-[11px] sm:text-xs text-slate-300">
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-[#b8b2ca]">
+        <a href="#catalog" data-nav-cat="diamonds" class="hover:text-white transition-colors">Diamonds</a>
+        <a href="#catalog" data-nav-cat="games" class="hover:text-white transition-colors">Games</a>
+        <a href="#catalog" data-nav-cat="apps" class="hover:text-white transition-colors">Premium Apps</a>
+        <a href="#order" class="hover:text-white transition-colors">How to order</a>
+        <a href="#payment" class="hover:text-white transition-colors">eSewa Payment</a>
+      </nav>
+
+      <!-- Header Right Actions -->
       <div class="flex items-center gap-2">
-        <span class="px-2 py-0.5 rounded font-mono font-bold uppercase bg-cyan-500/20 text-cyan-300 border border-cyan-400/30">
-          Interactive Demo
-        </span>
-        <span>Demo store balance, sample receipts &amp; mock listings — no real payments, codes or account passwords.</span>
-      </div>
-      <span id="adFreeStatusPill" class="hidden px-2 py-0.5 rounded-full text-[10px] font-bold uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
-        ✦ Ad-Free Pro Mode Active
-      </span>
-    </div>
-  </div>
-
-  <!-- Top Navbar -->
-  <header class="sticky top-0 z-40 border-b border-white/10 bg-obsidian/90 backdrop-blur-xl">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-3">
-      <!-- Brand Logo ('ID SELLER BRO' with lightning/controller badge) -->
-      <div class="flex items-center gap-3 min-w-0">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 via-violet-500 to-amber-400 p-[1.5px] shadow-cyan-pop shrink-0">
-          <div class="w-full h-full rounded-[10px] bg-panel flex items-center justify-center">
-            <!-- Lightning + Controller SVG Badge -->
-            <svg class="w-5 h-5 text-cyan-300" fill="none" stroke="currentColor" stroke-width="2.1" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 12h4m-2-2v4m7.5-1h.01M17.5 11h.01M4 8a3 3 0 013-3h10a3 3 0 013 3v8a3 3 0 01-3 3H7a3 3 0 01-3-3V8z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13 6l-2 4h3l-2 4" />
-            </svg>
-          </div>
-        </div>
-        <div class="min-w-0">
-          <div class="flex items-center gap-2">
-            <span class="font-display font-bold text-sm sm:text-base lg:text-lg tracking-tight text-white truncate">
-              ID SELLER BRO
-            </span>
-            <span id="navEditionBadge" class="hidden sm:inline-flex px-2 py-0.5 rounded-full text-[10px] font-bold uppercase bg-white/10 text-slate-300 border border-white/15">
-              FREE TIER
-            </span>
-          </div>
-          <p class="text-[11px] text-slate-400 truncate">Free Fire Diamonds &amp; Premium Store • Premium Edition</p>
-        </div>
-      </div>
-
-      <!-- Right Controls: Currency Switch + Wallet Balance Pill + Premium Pro Badge Toggle -->
-      <div class="flex items-center gap-2 sm:gap-2.5 flex-wrap">
-        <!-- USD / NPR Currency Selector -->
-        <button
-          id="currencyToggleBtn"
-          type="button"
-          title="Switch demo currency between USD and NPR"
-          class="px-2.5 py-2 rounded-xl text-xs font-mono font-bold bg-panelElev hover:bg-white/10 text-slate-200 border border-white/15 transition-colors cursor-pointer"
-        >
-          <span id="currencyCodeLabel">USD</span> ⇄
-        </button>
-
-        <!-- Simulated Wallet Balance Pill + Fund Wallet Button -->
-        <div class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-panelElev border border-cyan-400/30 text-xs sm:text-sm">
-          <span class="text-slate-400 hidden sm:inline">Wallet:</span>
-          <span id="walletBalanceDisplay" class="font-mono font-bold text-cyan-300">रु. 4,500.00</span>
-          <button
-            id="topupWalletDemoBtn"
-            type="button"
-            title="Fund ID SELLER BRO wallet inside app"
-            class="px-1.5 py-0.5 rounded-md text-[10px] font-mono font-bold bg-cyan-400/15 hover:bg-cyan-400/25 text-cyan-200 border border-cyan-400/30 cursor-pointer"
-          >
-            +रु. 1,000
-          </button>
-        </div>
-
-        <!-- Google Login / Account Button -->
-        <button
-          id="googleAuthBtn"
-          type="button"
-          class="inline-flex items-center gap-2 px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition-all cursor-pointer bg-panelElev border-white/15 text-white hover:border-cyan-400/50"
-        >
-          <span id="googleAvatarBadge" class="w-5 h-5 rounded-full bg-white text-slate-950 font-mono text-[11px] font-extrabold flex items-center justify-center shrink-0">
-            G
-          </span>
-          <span id="googleAuthLabel" class="max-w-[120px] sm:max-w-[155px] truncate">Sign in with Google</span>
-        </button>
-
-        <!-- Live 'Premium Pro' Status Toggle Badge -->
-        <button
-          id="navProToggleBtn"
-          type="button"
-          aria-pressed="false"
-          class="inline-flex items-center gap-2 px-3 py-2 rounded-xl text-xs sm:text-sm font-bold border transition-all cursor-pointer bg-panelElev border-white/15 text-slate-200 hover:border-amber-400/50"
-        >
-          <span id="navProDot" class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
-          <span id="navProText">Premium Pro: OFF</span>
+        <a href="#order"
+           class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-purple-500 bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white font-extrabold text-xs sm:text-sm shadow-lg shadow-purple-900/40 transition-all active:scale-95">
+          <span>Order now</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" type="button" aria-label="Toggle Menu" aria-expanded="false"
+                class="md:hidden p-2.5 rounded-xl bg-[#171326] border border-[#453568] text-slate-200 hover:text-white hover:border-purple-500 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
         </button>
       </div>
     </div>
 
-    <!-- Quick Tab Navigation -->
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 overflow-x-auto pb-2.5 pt-1" aria-label="Main store sections">
-      <button
-        type="button"
-        data-tab="top-up"
-        class="store-tab active inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer shrink-0 bg-gradient-to-r from-cyan-400 to-violet-500 text-slate-950 shadow-cyan-pop"
-      >
-        <span>💎 Diamond Top-Up</span>
-      </button>
-
-      <button
-        type="button"
-        data-tab="id-market"
-        class="store-tab inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer shrink-0 bg-panel text-slate-300 border border-white/10 hover:border-cyan-400/40 hover:text-white"
-      >
-        <span>🎮 Sell / Buy FF ID</span>
-        <span id="idMarketBadgeCount" class="px-1.5 py-0.5 rounded-md text-[11px] font-mono bg-white/10 text-cyan-200">4</span>
-      </button>
-
-      <button
-        type="button"
-        data-tab="premium-pass"
-        class="store-tab inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer shrink-0 bg-panel text-slate-300 border border-white/10 hover:border-amber-400/40 hover:text-white"
-      >
-        <span>👑 Premium Pass</span>
-        <span class="px-1.5 py-0.5 rounded-md text-[11px] font-mono bg-amber-500/15 text-amber-300">PRO</span>
-      </button>
-
-      <button type="button" data-tab="digital-store" class="store-tab inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer shrink-0 bg-panel text-slate-300 border border-white/10 hover:border-emerald-400/40 hover:text-white">
-        <span>🛍️ Apps & Game Store</span><span class="px-1.5 py-0.5 rounded-md text-[11px] font-mono bg-emerald-500/15 text-emerald-300">NEW</span>
-      </button>
-
-      <button
-        type="button"
-        data-tab="orders"
-        class="store-tab inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer shrink-0 bg-panel text-slate-300 border border-white/10 hover:border-violet-400/40 hover:text-white"
-      >
-        <span>🧾 Order History</span>
-        <span id="orderBadgeCount" class="px-1.5 py-0.5 rounded-md text-[11px] font-mono bg-violet-500/20 text-violet-200">2</span>
-      </button>
-    </nav>
+    <!-- Collapsible Mobile Navigation Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-[#30234d] bg-[#0c091a] px-4 py-3 space-y-1">
+      <a href="#catalog" data-nav-cat="diamonds" class="block px-3 py-2.5 rounded-xl text-sm font-semibold text-[#b8b2ca] hover:text-white hover:bg-white/5">💎 Free Fire Diamonds</a>
+      <a href="#catalog" data-nav-cat="games" class="block px-3 py-2.5 rounded-xl text-sm font-semibold text-[#b8b2ca] hover:text-white hover:bg-white/5">🎮 Game Top-ups & Gift Cards</a>
+      <a href="#catalog" data-nav-cat="apps" class="block px-3 py-2.5 rounded-xl text-sm font-semibold text-[#b8b2ca] hover:text-white hover:bg-white/5">👑 Premium Apps</a>
+      <a href="#order" class="block px-3 py-2.5 rounded-xl text-sm font-semibold text-yellow-400 hover:bg-white/5">📩 Place Order Request</a>
+      <a href="#payment" class="block px-3 py-2.5 rounded-xl text-sm font-semibold text-[#22d3ee] hover:bg-white/5">💚 eSewa Payment</a>
+    </div>
   </header>
 
-  <!-- Main Workspace -->
-  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-8">
-
-    <!-- ========================================================= -->
-    <!-- TAB 1: DIAMOND TOP-UP                                     -->
-    <!-- ========================================================= -->
-    <section id="tab-top-up" class="tab-panel space-y-6">
-      <!-- Hero Banner -->
-      <div class="rounded-3xl bg-gradient-to-r from-panelElev via-panel to-obsidian border border-white/10 p-5 sm:p-7 flex flex-col lg:flex-row lg:items-center justify-between gap-5">
-        <div class="space-y-1.5 max-w-2xl">
-          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 text-xs font-semibold">
-            <span>⚡ Instant UID Delivery Centre</span>
+  <main>
+    <!-- Hero Section -->
+    <section class="pt-10 pb-8 sm:pt-16 sm:pb-12">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Hero Left Copy -->
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-[#22d3ee] font-extrabold tracking-widest uppercase text-[11px] sm:text-xs mb-4">
+            <span class="w-2 h-2 rounded-full bg-[#22d3ee] animate-pulse"></span>
+            Nepal gaming & digital store
           </div>
-          <h1 class="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">
-            Free Fire Diamond Top-Up &amp; Passes
+          <h1 class="text-4xl sm:text-6xl lg:text-[4.6rem] font-black leading-[0.98] tracking-tight text-white mb-5">
+            LEVEL UP.<br />
+            <span class="text-[#facc15] drop-shadow-[0_0_28px_rgba(250,204,21,0.35)]">PAY LESS.</span>
           </h1>
-          <p class="text-xs sm:text-sm text-slate-300">
-            Enter your Player UID, pick a diamond pack or membership, choose a demo payment method, and generate an instant receipt.
+          <p class="text-[#b8b2ca] text-base sm:text-lg leading-relaxed max-w-xl">
+            Free Fire diamonds, game top-ups, gift cards and premium app subscriptions — all in one place. Browse packages in NPR and send your order request in seconds.
           </p>
+          <div class="flex flex-wrap gap-3 mt-7">
+            <a href="#catalog"
+               class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-purple-500 bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white font-extrabold text-sm sm:text-base shadow-neon-purple transition-all active:scale-95">
+              Explore packages
+            </a>
+            <a href="#order"
+               class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#171326] hover:bg-[#1f1933] border border-[#453568] hover:border-purple-400 text-white font-extrabold text-sm sm:text-base transition-all active:scale-95">
+              How to order
+            </a>
+          </div>
         </div>
 
-        <div id="topupProStatusCard" class="rounded-2xl bg-obsidian/80 border border-white/10 p-4 flex items-center justify-between lg:justify-start gap-4 shrink-0">
-          <div>
-            <p class="text-[11px] uppercase tracking-wider text-slate-400">Bonus Diamonds</p>
-            <p id="topupBonusRateText" class="font-mono text-sm sm:text-base font-bold text-cyan-300 mt-0.5">Standard Rate</p>
-          </div>
-          <button
-            id="quickEnableProTopupBtn"
-            type="button"
-            class="px-3 py-2 rounded-xl text-xs font-bold bg-amber-400/15 hover:bg-amber-400/25 text-amber-300 border border-amber-400/40 transition-colors cursor-pointer"
-          >
-            Unlock +Bonus Pro
-          </button>
-        </div>
-      </div>
-
-      <!-- STEP 1: Player UID & Server/Region -->
-      <div class="rounded-3xl bg-panel border border-white/10 p-5 sm:p-6 space-y-4">
-        <div class="flex flex-wrap items-center justify-between gap-2">
-          <div class="flex items-center gap-2.5">
-            <span class="w-7 h-7 rounded-lg bg-cyan-400 text-slate-950 font-mono text-xs font-extrabold flex items-center justify-center">1</span>
-            <h2 class="font-display text-base sm:text-lg font-bold text-white">Enter Player UID &amp; Server Region</h2>
-          </div>
-          <button
-            id="fillSampleUidBtn"
-            type="button"
-            class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-panelElev hover:bg-white/10 text-cyan-300 border border-cyan-400/30 transition-colors cursor-pointer"
-          >
-            ⚡ Quick-Fill Sample UID
-          </button>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-          <div class="md:col-span-7">
-            <label for="playerUidInput" class="block text-xs font-semibold text-slate-300 mb-1.5">Free Fire Player UID</label>
-            <input
-              id="playerUidInput"
-              type="text"
-              maxlength="16"
-              value="2498174620"
-              placeholder="Enter numeric UID (e.g. 2498174620)"
-              class="w-full px-4 py-2.5 rounded-xl bg-obsidian border border-white/15 text-sm font-mono text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
-            />
-          </div>
-
-          <div class="md:col-span-5">
-            <label for="serverRegionSelect" class="block text-xs font-semibold text-slate-300 mb-1.5">Server / Region</label>
-            <select
-              id="serverRegionSelect"
-              class="w-full px-4 py-2.5 rounded-xl bg-obsidian border border-white/15 text-sm text-white focus:outline-none focus:border-cyan-400 cursor-pointer"
-            >
-              <option value="Global" selected>Global</option>
-              <option value="South Asia">South Asia</option>
-              <option value="SG (Singapore)">SG (Singapore)</option>
-              <option value="BD (Bangladesh)">BD (Bangladesh)</option>
-              <option value="IN (India)">IN (India)</option>
-            </select>
+        <!-- Hero Right Showcase Card -->
+        <div class="lg:col-span-5">
+          <div class="bg-gradient-to-br from-[#21133c] to-[#0d0b19] border border-[#7440a5] rounded-3xl p-6 sm:p-7 shadow-neon-purple lg:rotate-1 hover:rotate-0 transition-transform duration-300">
+            <div class="text-6xl sm:text-7xl text-center mb-2 drop-shadow-[0_0_22px_rgba(34,211,238,0.65)] select-none">💎</div>
+            <h2 class="text-center text-xl sm:text-2xl font-black tracking-wide text-white">GAMING CENTRE</h2>
+            <p class="text-center text-sm text-[#b8b2ca] mt-1">Fast • Simple • Nepal market pricing (NPR)</p>
+            <div class="grid grid-cols-3 gap-2.5 mt-6">
+              <div class="bg-white/[0.04] border border-white/[0.06] rounded-2xl py-3 px-2 text-center">
+                <b class="block text-[#facc15] font-black text-sm sm:text-base">FF</b>
+                <small class="text-[#b8b2ca] text-xs">Diamonds</small>
+              </div>
+              <div class="bg-white/[0.04] border border-white/[0.06] rounded-2xl py-3 px-2 text-center">
+                <b class="block text-[#22d3ee] font-black text-sm sm:text-base">GAMES</b>
+                <small class="text-[#b8b2ca] text-xs">Top-ups</small>
+              </div>
+              <div class="bg-white/[0.04] border border-white/[0.06] rounded-2xl py-3 px-2 text-center">
+                <b class="block text-[#a855f7] font-black text-sm sm:text-base">PRO</b>
+                <small class="text-[#b8b2ca] text-xs">Apps</small>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- STEP 2: Select Diamond Pack Cards + Weekly/Monthly Membership Packs -->
-      <div class="rounded-3xl bg-panel border border-white/10 p-5 sm:p-6 space-y-5">
-        <div class="flex flex-wrap items-center justify-between gap-2">
-          <div class="flex items-center gap-2.5">
-            <span class="w-7 h-7 rounded-lg bg-violet-500 text-white font-mono text-xs font-extrabold flex items-center justify-center">2</span>
-            <h2 class="font-display text-base sm:text-lg font-bold text-white">Select Diamond Pack or Membership</h2>
+    <!-- Live Search, Category Filter Pills & Quick-Filter Tags -->
+    <section id="catalog" class="py-6 sm:py-10">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <!-- Control Bar Panel -->
+        <div class="bg-[#121022]/90 border border-[#30234d] rounded-2xl p-4 sm:p-5 mb-8 shadow-xl backdrop-blur-md">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+            <!-- Live Search Input -->
+            <div class="relative flex-1 max-w-xl">
+              <span class="absolute inset-y-0 left-3.5 flex items-center text-[#b8b2ca] pointer-events-none">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 103.5 10.5a7.5 7.5 0 0013.15 6.15z" />
+                </svg>
+              </span>
+              <input id="searchInput" type="search" placeholder="Search diamonds, PUBG, Netflix, Spotify, 240..."
+                     class="w-full pl-10 pr-10 py-3 rounded-xl bg-[#090814] border border-[#453568] focus:border-[#22d3ee] focus:ring-2 focus:ring-[#22d3ee]/20 text-sm text-white placeholder-[#b8b2ca]/60 outline-none transition-all" />
+              <button id="clearSearchBtn" type="button" aria-label="Clear search"
+                      class="hidden absolute inset-y-0 right-3 items-center text-xs font-bold text-[#b8b2ca] hover:text-white">
+                ✕
+              </button>
+            </div>
+
+            <!-- Category Filter Pills -->
+            <div class="flex flex-wrap items-center gap-2" role="tablist" aria-label="Product Categories">
+              <button type="button" data-category="all"
+                      class="cat-pill px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold border transition-all cursor-pointer">
+                All Items
+              </button>
+              <button type="button" data-category="diamonds"
+                      class="cat-pill px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold border transition-all cursor-pointer">
+                💎 Free Fire Diamonds
+              </button>
+              <button type="button" data-category="games"
+                      class="cat-pill px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold border transition-all cursor-pointer">
+                🎮 Games
+              </button>
+              <button type="button" data-category="apps"
+                      class="cat-pill px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold border transition-all cursor-pointer">
+                👑 Premium Apps
+              </button>
+            </div>
           </div>
-          <span id="packModeHint" class="text-xs text-slate-400">Toggle Premium Pro to boost +Bonus diamonds</span>
-        </div>
 
-        <div id="diamondPacksContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <!-- Dynamically rendered -->
-        </div>
-      </div>
-
-      <!-- STEP 3: Payment Method Selector Cards + Instant 'Top Up Now' CTA -->
-      <div class="rounded-3xl bg-panel border border-white/10 p-5 sm:p-6 space-y-5">
-        <div class="flex items-center gap-2.5">
-          <span class="w-7 h-7 rounded-lg bg-amber-400 text-slate-950 font-mono text-xs font-extrabold flex items-center justify-center">3</span>
-          <h2 class="font-display text-base sm:text-lg font-bold text-white">Choose Payment Method &amp; Checkout</h2>
-        </div>
-
-        <div id="paymentMethodsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <!-- Wallet Balance -->
-          <button
-            type="button"
-            data-payment="Wallet Balance"
-            class="payment-card selected text-left rounded-2xl p-4 border transition-all cursor-pointer bg-cyan-500/10 border-cyan-400 shadow-cyan-pop"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <span class="text-sm font-bold text-white">💼 Wallet Balance</span>
-              <span class="text-[11px] font-mono text-cyan-300 font-bold">Instant</span>
+          <!-- Quick-Filter Tags & Result Counter -->
+          <div class="flex flex-wrap items-center justify-between gap-3 mt-4 pt-3.5 border-t border-[#30234d]/70">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-xs font-semibold text-[#b8b2ca] mr-1">Quick tags:</span>
+              <button type="button" data-tag="all"
+                      class="tag-pill px-3 py-1.5 rounded-full text-xs font-bold border transition-all cursor-pointer">
+                All Tags
+              </button>
+              <button type="button" data-tag="Popular"
+                      class="tag-pill px-3 py-1.5 rounded-full text-xs font-bold border transition-all cursor-pointer">
+                🔥 Popular
+              </button>
+              <button type="button" data-tag="Best value"
+                      class="tag-pill px-3 py-1.5 rounded-full text-xs font-bold border transition-all cursor-pointer">
+                ⭐ Best Value
+              </button>
+              <button type="button" data-tag="Membership"
+                      class="tag-pill px-3 py-1.5 rounded-full text-xs font-bold border transition-all cursor-pointer">
+                🎫 Memberships
+              </button>
             </div>
-            <p class="text-xs text-slate-300">Deducts from your simulated store wallet balance.</p>
-          </button>
-
-          <!-- Card / Apple Pay / Google Pay Demo -->
-          <button
-            type="button"
-            data-payment="Card / Apple Pay / Google Pay Demo"
-            class="payment-card text-left rounded-2xl p-4 border transition-all cursor-pointer bg-obsidian border-white/10 hover:border-violet-400/50"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <span class="text-sm font-bold text-white">💳 Card / Apple / Google Pay</span>
-              <span class="text-[11px] font-mono text-violet-300">Demo</span>
-            </div>
-            <p class="text-xs text-slate-300">Simulated express checkout — no real card required.</p>
-          </button>
-
-          <!-- Instant Voucher Code Demo -->
-          <button
-            type="button"
-            data-payment="Instant Voucher Code Demo"
-            class="payment-card text-left rounded-2xl p-4 border transition-all cursor-pointer bg-obsidian border-white/10 hover:border-amber-400/50"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <span class="text-sm font-bold text-white">🎟️ Instant Voucher Code</span>
-              <span class="text-[11px] font-mono text-amber-300">Demo</span>
-            </div>
-            <p class="text-xs text-slate-300">Redeem a simulated top-up voucher code in one click.</p>
-          </button>
-        </div>
-
-        <div class="mt-4 rounded-2xl border border-emerald-400/30 bg-emerald-500/5 p-5 space-y-4">
-          <div class="flex items-center justify-between gap-3 flex-wrap">
-            <div>
-              <p class="text-sm font-extrabold text-emerald-300">📲 Pay with eSewa QR</p>
-              <p class="text-xs text-slate-300 mt-1">Scan this QR with eSewa and enter the exact order total shown above.</p>
-            </div>
-            <span class="text-[10px] font-bold rounded-full px-3 py-1 bg-emerald-400/10 text-emerald-300 border border-emerald-400/20">Manual verification</span>
-          </div>
-          <div class="flex flex-col sm:flex-row items-center gap-5">
-            <div class="bg-white rounded-xl p-2 max-w-[260px] w-full">
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAdEAAAHRAQAAAAAduL42AAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLVIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAJBElEQVR42u1dTYwcVxH+qrvNDInEtBQFIQGaBmwEyiU3BJdpIiSIOPCTrGUpSIDgwCVWToTb9BIkJI62BJwiHyOvFTkHYktBSm84ISEkJIiQMHZvTgYkb68Fca+2pyuH/pnZ7Tc9772a3bVJj3ywx1NTVV/Xe++revXeEEYpbF57PpyNl6xEMdoAwJavCN43Yfn6MWiQWcreHzkXbPUO4CY/s5QlB9+3xSqHk9ja7MD9QWgrTJjY2lzAEah1YP/qZXvZXraX7WV72V62l+1l/79kqXkNsUlERCGwTUQeAOw42Jl/QltvIbC5/oA/fysy1ZtayDoCmxX+SvQa++sLcE4Fek/LX4WsV7/xsSq5u/RL4CN3L71yc3cL77o3kQN87X3Ap5+WH/jyt5svmZZZFkZ1Oj3gaMDxgGMAbpWBgTipE/S0EVlic5wr8jBNfxWZHuvKxp5Ab8tmn3XjKm69k+rr9QT+PjQ4+6SLVRvntFPv7du3b5dBffD6H88CwHByK8Lv49IHQv7yvVs3FmQX4hkABhwNOGrezTHJMWZm5gScAgCndWCvfL6JY49zoIirSDeuinZcQVPv3GZzvUEx9zc1jasFvb7hOEqKdlxp4+xoxVX3+IUFzoUAZ/O42iYKZ0Qetl1OmMgxmK8gmK+ger72axnZ22yj1zGOKwW/EuCMRxBnX4CzZlxNM0xzbHuY5ECBHZeTQ/5CMH5t5ivj9bcwXwc9s3VQ7a9gPYJivoKuvxY4e60xyLprinId1FxTRDwnN8OZmTkDgM0hth+v+HM8o4BpUgAVxdYYg16LM+jPG7XNiXlcQbAOosVzLOarxGKe9Ox5e4NVIFgHE8l6dMI4e0dtVsRVg+de/X8DYJBtvgK4+baXg4qdzxQ7TpEymXKkwDz/bXNCfVlFbgXjuS4wr8m0OWFq7q9FTabxNzDHKm7NG5L6hn5NJmzlGgZYea0cZ7ns797cLbO8g+t44ScI9y//+u9A8flo9uxX/goAn/7HxXu706rccTiXbDUcYMJcPqkxc0KKz+iM/cD0+SqnHWuOZFE3M5cNBbK9zR1z+I1zly4Bz4Vw33mttPnBrbOgz11882Z+8dlPfQPAjS8GW3gtdD6+cbQ2AlREZFDFM1yO3Sryx8xcVOUTLKn1RR1YrVpDo+W8buVaFnWAqa3XghN22Wyh1xHohUBvIdBrjjN09C6u0cX9rrxszvmjdjw39HtaV/lqKU6oqfU1RW5ebbM2N4u0ahTmsvp6zWvX0XL+nD78/kr0trEiAVbH5++Io32iERMRedgeMOeYlOOIKWDyAYB3tPclE8G+lS5v1+2kVMkOT8lmCGzOBDYPT8lmSWxkApuHVaEPwHRhfh7PKADGXIa8VT6onf8q8lDS9Tc23LdafL5NXmaxrxG3bdaub4SmXCVT4azJVRb9FdRV5nuLRXst0867Hb05VuVvV12lyQfTutY34GjAzBwDkzqqx/X244iX8g3FGDR/vmjlzjZ1foHeRFK/Kuz1wrHXm2A9OPsCnFNTWcHz1YmrM6Uz7otv3T/3pZew+VV6lflHT/Ebj/8zpntvbBJ5/N5Hd3/4q+lfXChzyYZ7x2VtxOXYLYl31TqSQqNvRJUv+IZjXz8/6qq5ae9NSGIjNJ1ju7E62T16/fy3izNYzO0Kf1v8/LErOLi+cXAdBVBcwPPX/rN19w/fuvobB49dBYBPfvf8AbZwFUAUHYnnEXNaE5WsmtInOUBl0wjGRZVILusbiTpzWM18QVIbCQ33rTBc0Ot16FWvoXr+Rifhr3kuGbf2JVfyuo66ir+KX0Wdc46WzV4UNiylOOrOmbMtrsJVPC/WsmOXEzR9UJ1cZajIYRPN2mbWmf9C9xmhzc3MZRub/W7ZYZfNqbm/a7HZQvZQicMWZx+dXKUzNtL1xsZC/M5r01ndocrMRRXPK/diuuqTFjg75mPBdF9yqKpfnYDNEIzfTIDzUIWVhc35GuYcXZszS5yJiP9FZRZJI+YcmFE4o3B+AAF71R/zupl2vi/hZhBwb5jWc7rrZub+orD316IfGDp1Bpt8UDs2NJ9vpllniJTzc3mOoOq45qoVKqE53zhEuY/jzEVuWBfNVHmEZu/HsMvmFIJxZOGv9nqk8FdQu1aRDW1/T+A8TqYZGwqsOMMmneG9z0YNVi7HTJO3fh4AY347BUbFQbmR3l7fI+TAnaPf/8zXxk0OQZ7BXqp230jUXf4yXENteKy3Zh57ErK5AOeFvs3E1ubjwqq2bQvA3U/87b23n/otUFzA7CquPf/kdy6/DgB4/zwwe3DraQD436svtmt95T+imnvHLnNZ9F4YhqPlZ8T0OHCk/4yMZfEIyn7YsFqHvw6GVw6tjzeUXGWxqW+aA25VwU6ooisptLhKLFi7w66xv0I27pqsVuk1z4/QqpslAn8tbJZwpBinY3OcC2LDZA1dPM8+ZaZadodoMqMAKNtFRszpyeynmOc4bb2+QG8q0Hta/kr0+gK96UPo72g+OW8OEZcbMS7HqM6INaxjxBCMXwjmDRj7a643EOhNBHoh0Pthxjldwr2rYC9vHNynSe5te/kkx6RwxneoHgm8R2zgr/l9I7FprUC1HklwtrA5hL3NsYDnhJ4AZ4HNonjOBTh7ljZPM8TAZL+6RWfHbc7FYMSr788RxbMEZwE3i1t9fTZ80lnvOIoE4yg6gXFkgVXchVV0fHG1dQ2g85xXHyhbR4AnNi6j+76R8hTwhOue7fkBsYotadW9UyVWGqEOwJf1Eq/5jiNoylrkZfNi3SnZLMEqETwjTa5y9hn/F1+Yf3EEPLhe2sy7ePnd8+0Kiuo+KFT77DHqMwhVGJdRr93jatHH6LXGvv5+meC+AoXN5vt0gWB/0OJ+BrTPw5rfGxDA3l9JT6BFDyTa551p6WeOnGcv/zphgDG+44DmYT2///xY7ydcxz2Bj5LeHqu1YLXkTLrOq78jtJftZXvZXraX7WV72V62lz0lWYYT28pKftNnBiew10uWP40F7A/t9Tpwn/6epex/hyDbdOEdOM/Z2vxngCx/8Kk4B+frf7JT++8XAO+KJcxP4gMc+qxqu3LB6AAAAABJRU5ErkJggg==" alt="ID SELLER BRO eSewa payment QR code" class="w-full h-auto block" />
-            </div>
-            <div class="space-y-2 text-center sm:text-left">
-              <p class="text-white font-bold">eSewa — Madhu Kumari Sah</p>
-              <p class="text-xs text-slate-300">After paying, send your transaction ID and payment screenshot to our Instagram support.</p>
-              <a href="https://www.instagram.com/id_seller_bro/" target="_blank" rel="noopener noreferrer" class="inline-flex px-4 py-2 rounded-xl bg-emerald-400 text-slate-950 text-sm font-extrabold">Send payment proof on Instagram</a>
-              <p class="text-[11px] text-amber-200/90">Your order will be processed only after payment is checked manually. This QR does not automatically confirm or collect payments.</p>
-            </div>
+            <div id="resultCount" class="text-xs font-semibold text-[#22d3ee]">Showing all products</div>
           </div>
         </div>
 
-        <!-- Summary Bar & Top Up Now Button -->
-        <div class="rounded-2xl bg-obsidian/90 border border-white/10 p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div class="space-y-1">
-            <p class="text-xs text-slate-400">
-              Selected: <strong id="summaryPackName" class="text-white">240 Diamonds</strong> •
-              UID: <span id="summaryUid" class="font-mono text-cyan-300">2498174620</span> (<span id="summaryRegion" class="text-slate-300">Global</span>)
-            </p>
-            <p class="text-xs sm:text-sm text-slate-200">
-              Total Reward: <strong id="summaryTotalReward" class="font-mono text-cyan-300">240 Diamonds (+24 Bonus)</strong> •
-              Price: <strong id="summaryPriceText" class="font-mono text-emerald-300">रु. 270</strong>
+        <!-- Dynamic Catalog Sections Container -->
+        <div id="catalogContainer" class="space-y-12">
+          <!-- Free Fire Diamonds Section -->
+          <div id="section-diamonds" class="catalog-section">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-5">
+              <div>
+                <div class="text-[#22d3ee] font-extrabold tracking-widest uppercase text-xs mb-1">Free Fire</div>
+                <h2 class="text-2xl sm:text-3xl font-black text-white">💎 Diamond packages</h2>
+                <p class="text-[#b8b2ca] text-sm mt-1">Prices in Nepali rupees (NPR) • Instant UID top-up</p>
+              </div>
+            </div>
+            <div id="diamondGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+          </div>
+
+          <!-- Games Section -->
+          <div id="section-games" class="catalog-section">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-5">
+              <div>
+                <div class="text-[#22d3ee] font-extrabold tracking-widest uppercase text-xs mb-1">More games</div>
+                <h2 class="text-2xl sm:text-3xl font-black text-white">🎮 Game top-ups & gift cards</h2>
+                <p class="text-[#b8b2ca] text-sm mt-1">Choose a game and ask for the latest available package.</p>
+              </div>
+            </div>
+            <div id="gameGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+          </div>
+
+          <!-- Premium Apps Section -->
+          <div id="section-apps" class="catalog-section">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-5">
+              <div>
+                <div class="text-[#22d3ee] font-extrabold tracking-widest uppercase text-xs mb-1">Digital subscriptions</div>
+                <h2 class="text-2xl sm:text-3xl font-black text-white">👑 Premium apps</h2>
+                <p class="text-[#b8b2ca] text-sm mt-1">Ask for current plan, duration and price.</p>
+              </div>
+            </div>
+            <div id="appGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+            <p class="text-[#b8b2ca] text-xs sm:text-sm mt-4">
+              Subscription availability and pricing can change. Confirm the plan and account requirements before paying.
             </p>
           </div>
+        </div>
 
-          <button
-            id="topUpNowBtn"
-            type="button"
-            class="px-6 py-3 rounded-xl text-sm font-extrabold text-slate-950 bg-gradient-to-r from-cyan-400 via-violet-400 to-amber-300 hover:brightness-110 active:scale-[0.99] transition-all shadow-cyan-pop cursor-pointer shrink-0"
-          >
-            ⚡ Top Up Now
+        <!-- Empty State (Shown when search/filters return 0 items) -->
+        <div id="emptyState" class="hidden text-center py-14 px-4 bg-[#121022] border border-[#30234d] rounded-3xl">
+          <div class="text-4xl mb-3">🔍</div>
+          <h3 class="text-lg font-extrabold text-white">No matching packages found</h3>
+          <p class="text-sm text-[#b8b2ca] max-w-md mx-auto mt-1">
+            Try clearing your search term or switching back to "All Items" to view all Free Fire diamonds, games, and subscriptions.
+          </p>
+          <button id="resetFiltersBtn" type="button"
+                  class="mt-5 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-sm transition-colors cursor-pointer">
+            Reset all filters
           </button>
         </div>
       </div>
     </section>
 
-    <!-- ========================================================= -->
-    <!-- TAB 2: SELL / BUY FF ID                                   -->
-    <!-- ========================================================= -->
-    <section id="tab-id-market" class="tab-panel hidden space-y-6">
-      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 rounded-3xl bg-panel border border-white/10 p-5 sm:p-6">
-        <div>
-          <h1 class="font-display text-2xl sm:text-3xl font-bold text-white">Free Fire ID Trading Hub</h1>
-          <p class="text-xs sm:text-sm text-slate-300 mt-0.5">
-            Browse escrow-protected FF ID listings or publish your own account card with 0% commission under Premium Pro.
-          </p>
+    <!-- Order Request & Live Preview Section -->
+    <section id="order" class="py-10 sm:py-14">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="mb-6">
+          <div class="text-[#22d3ee] font-extrabold tracking-widest uppercase text-xs mb-1">Simple ordering</div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white">📩 Place an order request</h2>
+          <p class="text-[#b8b2ca] text-sm mt-1">Fill this in, check the live preview, and copy your order message to send on Instagram.</p>
         </div>
 
-        <button
-          id="openListIdModalBtn"
-          type="button"
-          class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-orange-400 to-violet-400 hover:brightness-110 transition-all shadow-pro-glow cursor-pointer shrink-0"
-        >
-          <span>+ List Your FF ID for Sale</span>
-        </button>
-      </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-gradient-to-br from-[#21113d] to-[#10101e] border border-[#633b91] rounded-3xl p-5 sm:p-8 shadow-neon-purple">
+          <!-- Left Column: Form Inputs -->
+          <div class="lg:col-span-7">
+            <form id="orderForm" class="space-y-4">
+              <div>
+                <label for="item" class="block text-xs sm:text-sm font-bold text-violet-200 mb-1.5">Product / Package *</label>
+                <select id="item" required
+                        class="w-full p-3.5 rounded-xl bg-[#090814] border border-[#453568] focus:border-[#22d3ee] focus:ring-2 focus:ring-[#22d3ee]/20 text-white text-sm outline-none transition-all">
+                  <option value="">Choose a product</option>
+                </select>
+              </div>
 
-      <!-- Search & Rank/Escrow Filters -->
-      <div class="rounded-2xl bg-panel border border-white/10 p-4 flex flex-col md:flex-row md:items-center justify-between gap-3">
-        <div class="relative flex-1">
-          <input
-            id="idSearchInput"
-            type="search"
-            placeholder="Search nickname, UID, rank, or Evo/bundle item..."
-            class="w-full px-4 py-2 rounded-xl bg-obsidian border border-white/10 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
-          />
-        </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <label for="player" class="text-xs sm:text-sm font-bold text-violet-200">Player ID / Account detail</label>
+                    <span id="savedBadge" class="hidden text-[11px] font-semibold text-[#22d3ee]">Auto-saved</span>
+                  </div>
+                  <input id="player" type="text" placeholder="e.g. 123456789 (UID)"
+                         class="w-full p-3.5 rounded-xl bg-[#090814] border border-[#453568] focus:border-[#22d3ee] focus:ring-2 focus:ring-[#22d3ee]/20 text-white text-sm placeholder-[#b8b2ca]/50 outline-none transition-all" />
+                </div>
 
-        <div class="flex flex-wrap items-center gap-2" id="idMarketFilterGroup">
-          <button type="button" data-id-filter="ALL" class="id-mkt-filter active px-3.5 py-2 rounded-xl text-xs font-bold bg-cyan-400 text-slate-950 cursor-pointer">
-            All IDs
-          </button>
-          <button type="button" data-id-filter="GRANDMASTER_MASTER" class="id-mkt-filter px-3.5 py-2 rounded-xl text-xs font-semibold bg-obsidian text-slate-300 border border-white/10 hover:border-amber-400/50 cursor-pointer">
-            Master / GM
-          </button>
-          <button type="button" data-id-filter="LV75_PLUS" class="id-mkt-filter px-3.5 py-2 rounded-xl text-xs font-semibold bg-obsidian text-slate-300 border border-white/10 hover:border-violet-400/50 cursor-pointer">
-            Level 75+
-          </button>
-        </div>
-      </div>
+                <div>
+                  <label for="name" class="block text-xs sm:text-sm font-bold text-violet-200 mb-1.5">Your name</label>
+                  <input id="name" type="text" placeholder="Your name"
+                         class="w-full p-3.5 rounded-xl bg-[#090814] border border-[#453568] focus:border-[#22d3ee] focus:ring-2 focus:ring-[#22d3ee]/20 text-white text-sm placeholder-[#b8b2ca]/50 outline-none transition-all" />
+                </div>
+              </div>
 
-      <!-- FF ID Cards Grid -->
-      <div id="ffIdMarketplaceGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-        <!-- Dynamically rendered -->
-      </div>
+              <!-- localStorage Clear Action -->
+              <div id="savedControls" class="hidden flex items-center justify-between text-xs text-[#b8b2ca] bg-white/[0.04] px-3.5 py-2 rounded-xl border border-white/[0.06]">
+                <span>💾 Your Name & Player ID are saved locally for faster repeat orders.</span>
+                <button id="clearSavedBtn" type="button" class="text-pink-400 hover:text-pink-300 font-bold underline ml-2 shrink-0 cursor-pointer">
+                  Clear saved info
+                </button>
+              </div>
 
-      <div id="emptyFfIdState" class="hidden rounded-2xl border border-dashed border-white/15 bg-panel/60 p-10 text-center space-y-2">
-        <p class="font-display text-base font-bold text-white">No FF IDs match your search or filter</p>
-        <p class="text-xs text-slate-400">Try another search term or click "All IDs".</p>
-      </div>
-    </section>
+              <div>
+                <label for="note" class="block text-xs sm:text-sm font-bold text-violet-200 mb-1.5">Extra note</label>
+                <textarea id="note" rows="3" placeholder="Package duration, platform, payment method (eSewa / Khalti / Bank), or other details"
+                          class="w-full p-3.5 rounded-xl bg-[#090814] border border-[#453568] focus:border-[#22d3ee] focus:ring-2 focus:ring-[#22d3ee]/20 text-white text-sm placeholder-[#b8b2ca]/50 outline-none transition-all resize-y"></textarea>
+              </div>
 
-    <!-- ========================================================= -->
-    <!-- TAB 3: PREMIUM PASS (APP TIER)                            -->
-    <!-- ========================================================= -->
-    <section id="tab-premium-pass" class="tab-panel hidden space-y-6">
-      <div class="rounded-3xl bg-gradient-to-br from-panelElev via-panel to-obsidian border border-amber-400/35 p-6 sm:p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-        <div class="space-y-2 max-w-2xl">
-          <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase bg-amber-500/20 text-amber-300 border border-amber-400/40">
-            App Membership Tier
-          </span>
-          <h1 class="font-display text-2xl sm:text-3xl font-bold text-white">
-            Free Tier vs. <span class="text-amber-300">Premium Pro</span>
-          </h1>
-          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-            Toggle <strong class="text-white">Premium Pro</strong> or buy the <strong class="text-amber-300">Premium Pro Pass</strong> directly inside the ID SELLER BRO to unlock +Bonus diamonds, 0% ID listing commission, priority featured badges, and Ad-Free Pro mode.
-          </p>
-        </div>
+              <!-- Action Buttons -->
+              <div class="flex flex-col sm:flex-row gap-3 pt-1">
+                <button type="submit"
+                        class="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-purple-500 bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white font-extrabold text-sm shadow-lg shadow-purple-900/40 transition-all active:scale-95 cursor-pointer">
+                  <span>📋 Copy order message</span>
+                </button>
+                <a href="https://www.instagram.com/id_seller_bro/" target="_blank" rel="noopener"
+                   class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#171326] hover:bg-[#221b38] border border-pink-500/50 hover:border-pink-400 text-pink-200 font-extrabold text-sm transition-all active:scale-95">
+                  <span>Open Instagram @ID_seller_bro ↗</span>
+                </a>
+              </div>
 
-        <div class="flex flex-wrap items-center gap-3 shrink-0">
-          <button
-            id="buyPremiumPassBtn"
-            type="button"
-            class="px-5 py-3.5 rounded-2xl text-sm font-extrabold text-slate-950 bg-gradient-to-r from-amber-400 via-orange-400 to-amber-300 hover:brightness-110 transition-all shadow-pro-glow cursor-pointer"
-          >
-            👑 Buy Pro Pass (<span id="proPassPriceLabel">रु. 499</span>)
-          </button>
-          <button
-            id="tierComparisonToggleBtn"
-            type="button"
-            class="px-4 py-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-panelElev hover:bg-white/10 text-amber-200 border border-amber-400/40 transition-all cursor-pointer"
-          >
-            Preview Toggle
-          </button>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Free Tier -->
-        <div class="rounded-3xl bg-panel border border-white/10 p-6 space-y-5">
-          <div class="flex items-center justify-between">
-            <div>
-              <h2 class="font-display text-xl font-bold text-white">Free Tier</h2>
-              <p class="text-xs text-slate-400">Standard store access</p>
-            </div>
-            <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-white/10 text-slate-300">FREE</span>
+              <p class="text-xs text-[#b8b2ca] leading-relaxed">
+                This website prepares an order message only. It does not accept payments or automatically deliver top-ups. Confirm availability and payment instructions directly with the seller.
+              </p>
+            </form>
           </div>
 
-          <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
-            <li class="flex items-start gap-2.5">
-              <span class="text-cyan-400 font-bold">•</span>
-              <span><strong>Standard Bonus Diamonds</strong> on top-up &amp; pass packs.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <span class="text-cyan-400 font-bold">•</span>
-              <span><strong>5% Seller Listing Commission</strong> estimated when listing FF IDs.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <span class="text-cyan-400 font-bold">•</span>
-              <span><strong>Standard Card Frame</strong> in ID marketplace listings.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <span class="text-cyan-400 font-bold">•</span>
-              <span><strong>Standard Mode</strong> (Ad-Free Pro badge inactive).</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Premium Pro -->
-        <div class="rounded-3xl bg-gradient-to-b from-amber-500/10 to-panel border border-amber-400/50 p-6 space-y-5 shadow-pro-glow">
-          <div class="flex items-center justify-between">
-            <div>
-              <h2 class="font-display text-xl font-bold text-amber-300">Premium Pro</h2>
-              <p class="text-xs text-slate-300">Full VIP top-up &amp; ID trading perks</p>
+          <!-- Right Column: Live Order Message Preview & Safety Notice -->
+          <div class="lg:col-span-5 flex flex-col justify-between gap-4">
+            <!-- Live Preview Card -->
+            <div class="bg-[#090814] border border-[#453568] rounded-2xl p-4 sm:p-5 flex-1 flex flex-col">
+              <div class="flex items-center justify-between gap-2 pb-3 mb-3 border-b border-[#30234d]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span class="text-xs font-extrabold uppercase tracking-wider text-[#22d3ee]">Live Order Message Preview</span>
+                </div>
+                <button id="quickCopyPreviewBtn" type="button"
+                        class="text-xs font-bold px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-yellow-300 border border-yellow-400/30 transition-colors cursor-pointer">
+                  Copy
+                </button>
+              </div>
+              <pre id="messagePreview" class="whitespace-pre-wrap font-mono text-xs sm:text-[13px] leading-relaxed text-slate-200 flex-1 select-all"></pre>
+              <div class="mt-3 pt-2.5 border-t border-[#30234d]/60 text-[11px] text-[#b8b2ca] flex items-center justify-between">
+                <span>1. Select package & fill details</span>
+                <span>2. Copy & DM on Instagram</span>
+              </div>
             </div>
-            <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-400/20 text-amber-200 border border-amber-300/40">PRO</span>
+
+            <!-- Safety Notice -->
+            <div class="border border-amber-500/40 bg-yellow-400/10 text-amber-100 p-4 rounded-2xl text-xs sm:text-sm leading-relaxed">
+              <strong class="text-yellow-300 font-extrabold block mb-0.5">🛡️ Safety tip:</strong>
+              Never share your password, OTP, or recovery codes. Only provide the Player ID (UID) needed for a game top-up.
+            </div>
           </div>
-
-          <ul class="space-y-3 text-xs sm:text-sm text-slate-100">
-            <li class="flex items-start gap-2.5">
-              <span class="text-amber-300 font-bold">✦</span>
-              <span><strong>Extra +Bonus Diamonds</strong> highlighted on every top-up pack.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <span class="text-amber-300 font-bold">✦</span>
-              <span><strong>0% ID Listing Commission</strong> — keep 100% of estimated sale value.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <span class="text-amber-300 font-bold">✦</span>
-              <span><strong>Priority Featured Badge</strong> &amp; golden glow on FF ID cards.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <span class="text-amber-300 font-bold">✦</span>
-              <span><strong>Ad-Free Mode Badge</strong> displayed across the top bar.</span>
-            </li>
-          </ul>
         </div>
       </div>
     </section>
 
-    <!-- ========================================================= -->
-    <!-- TAB 4: APPS & GAME STORE                                  -->
-    <!-- ========================================================= -->
-    <section id="tab-digital-store" class="tab-panel hidden space-y-6">
-      <div class="rounded-3xl bg-gradient-to-r from-emerald-500/15 via-panel to-violet-500/15 border border-emerald-400/20 p-6 sm:p-8">
-        <span class="inline-flex px-3 py-1 rounded-full text-xs font-bold uppercase bg-emerald-500/15 text-emerald-300 border border-emerald-400/30">Digital products</span>
-        <h1 class="font-display text-2xl sm:text-3xl font-bold text-white mt-3">Apps, Subscriptions & Game Credits</h1>
-        <p class="text-sm text-slate-300 mt-2 max-w-2xl">Browse demo listings for official gift cards, subscriptions and game top-ups. Redeem through the provider's official app or website.</p>
-        <p class="text-xs text-amber-200 mt-3">Demo catalogue only — prices and checkout are simulated. No real codes, subscriptions or game currency are delivered.</p>
-      </div>
-      <div class="rounded-2xl bg-panel border border-white/10 p-4 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-        <input id="digitalSearchInput" type="search" placeholder="Search Spotify, Roblox, UC, diamonds..." class="w-full sm:max-w-md px-4 py-3 rounded-xl bg-obsidian border border-white/10 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400">
-        <select id="digitalCategorySelect" class="px-4 py-3 rounded-xl bg-obsidian border border-white/10 text-sm text-white">
-          <option value="ALL">All products</option><option value="APPS">Apps & subscriptions</option><option value="GAMES">Game top-ups</option><option value="GIFT">Gift cards</option>
-        </select>
-      </div>
-      <div id="digitalProductsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"></div>
-    </section>
-
-    <!-- ========================================================= -->
-    <!-- TAB 5: ORDER HISTORY                                      -->
-    <!-- ========================================================= -->
-    <section id="tab-orders" class="tab-panel hidden space-y-6">
-      <div class="rounded-3xl bg-panel border border-white/10 p-5 sm:p-6 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-        <div>
-          <h1 class="font-display text-2xl sm:text-3xl font-bold text-white">ID SELLER BRO Transaction Ledger</h1>
-          <p class="text-xs sm:text-sm text-slate-300 mt-0.5">
-            All in-app wallet top-ups, diamond top-ups, FF ID escrow trades/listings, and Premium Pro passes logged with Google account context.
-          </p>
-        </div>
-
-        <div class="flex flex-wrap items-center gap-2" id="orderFilterGroup">
-          <button type="button" data-order-filter="ALL" class="order-filter-btn active px-3.5 py-2 rounded-xl text-xs font-bold bg-violet-500 text-white cursor-pointer">
-            All Activity
-          </button>
-          <button type="button" data-order-filter="TOPUP" class="order-filter-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-obsidian text-slate-300 border border-white/10 hover:border-cyan-400/40 cursor-pointer">
-            Top-Ups
-          </button>
-          <button type="button" data-order-filter="ID_TRADE" class="order-filter-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-obsidian text-slate-300 border border-white/10 hover:border-amber-400/40 cursor-pointer">
-            ID Purchases &amp; Offers
-          </button>
-          <button type="button" data-order-filter="ID_LISTING" class="order-filter-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-obsidian text-slate-300 border border-white/10 hover:border-emerald-400/40 cursor-pointer">
-            Listed IDs
-          </button>
-          <button type="button" data-order-filter="WALLET" class="order-filter-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-obsidian text-slate-300 border border-white/10 hover:border-cyan-400/40 cursor-pointer">
-            Wallet &amp; Pro
-          </button>
+    <section id="payment" class="py-10 sm:py-14">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="max-w-2xl mx-auto bg-gradient-to-br from-[#21113d] to-[#10101e] border border-[#633b91] rounded-3xl p-5 sm:p-8 shadow-neon-purple text-center">
+          <div class="text-[#22d3ee] font-extrabold tracking-widest uppercase text-xs mb-1">Payment</div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white">💚 eSewa QR Payment</h2>
+          <p class="text-[#b8b2ca] text-sm mt-2">Confirm your order and exact total with ID SELLER BRO before making payment.</p>
+          <div class="bg-white rounded-2xl p-5 mt-6 text-slate-900">
+            <div class="text-5xl mb-2">📲</div>
+            <p class="font-extrabold text-lg">Scan the seller's eSewa QR</p>
+            <p class="text-sm mt-1">Ask for the current QR in Instagram DM after your order is confirmed.</p>
+          </div>
+          <p class="text-white font-extrabold text-lg mt-4">eSewa account: Madhu Kumari Sah</p>
+          <p class="text-[#b8b2ca] text-sm">9701297584</p>
+          <div class="text-left bg-[#090814] border border-[#453568] rounded-2xl p-4 mt-6">
+            <h3 class="text-yellow-300 font-extrabold mb-2">How to pay</h3>
+            <ol class="list-decimal list-inside space-y-2 text-sm text-[#b8b2ca]">
+              <li>Choose a product and send your order request.</li>
+              <li>Wait for the seller to confirm availability and exact amount.</li>
+              <li>Pay using the eSewa QR supplied by the seller.</li>
+              <li>Send your payment receipt or transaction ID to Instagram.</li>
+            </ol>
+          </div>
+          <a href="https://www.instagram.com/id_seller_bro/" target="_blank" rel="noopener" class="mt-5 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-extrabold text-sm">Send order & payment proof on Instagram ↗</a>
+          <p class="text-amber-200 text-xs leading-relaxed mt-4">Payments are checked manually. This is not an automatic eSewa gateway. Never share your eSewa PIN or OTP.</p>
         </div>
       </div>
-
-      <div id="orderHistoryList" class="space-y-3">
-        <!-- Dynamically rendered -->
-      </div>
     </section>
+
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-white/10 bg-obsidian/90 py-5 mt-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-400">
-      <p>ID SELLER BRO — Free Fire Diamonds &amp; Premium Store (Premium Edition)</p>
-      <p>Demo prototype: simulated balances, receipts and catalogue. No real fulfilment or payment processing.</p>
+  <footer class="border-t border-[#30234d] py-8 sm:py-10 text-[#b8b2ca] text-xs sm:text-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between gap-4">
+      <div>
+        <b class="text-white font-extrabold text-sm sm:text-base">👑 ID Seller Bro</b>
+        <p class="mt-1">Gaming • Top-ups • Premium subscriptions</p>
+      </div>
+      <div class="sm:text-right">
+        <p>Prices shown in NPR • Confirm before payment</p>
+        <p class="mt-1">© <span id="year"></span> ID Seller Bro</p>
+      </div>
     </div>
   </footer>
 
-  <!-- ========================================================= -->
-  <!-- MODAL 1: ORDER CONFIRMATION RECEIPT                       -->
-  <!-- ========================================================= -->
-  <div id="receiptModal" class="fixed inset-0 z-50 hidden modal-backdrop flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="receiptModalTitle">
-    <div class="relative w-full max-w-md rounded-3xl bg-panel border border-cyan-400/40 p-6 shadow-2xl space-y-5">
-      <div class="flex items-start justify-between gap-3">
-        <div>
-          <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/35 mb-1.5">
-            ✓ INSTANT RECEIPT (DEMO)
-          </span>
-          <h2 id="receiptModalTitle" class="font-display text-xl font-bold text-white">Order Confirmed</h2>
-        </div>
-        <button
-          id="closeReceiptBtn"
-          type="button"
-          aria-label="Close receipt modal"
-          class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/10 cursor-pointer"
-        >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-
-      <div id="receiptDetailsBox" class="rounded-2xl bg-obsidian border border-white/10 p-4 space-y-2 text-xs">
-        <!-- Populated dynamically -->
-      </div>
-
-      <div class="flex items-center justify-end gap-3">
-        <button
-          id="viewOrderHistoryFromReceiptBtn"
-          type="button"
-          class="px-4 py-2.5 rounded-xl text-xs font-semibold bg-violet-500/20 hover:bg-violet-500/30 text-violet-200 border border-violet-400/35 cursor-pointer"
-        >
-          View Order History
-        </button>
-        <button
-          id="doneReceiptBtn"
-          type="button"
-          class="px-5 py-2.5 rounded-xl text-xs font-bold text-slate-950 bg-cyan-400 hover:bg-cyan-300 cursor-pointer"
-        >
-          Done
-        </button>
-      </div>
-    </div>
+  <!-- Toast Notification -->
+  <div id="toast" role="status" aria-live="polite"
+       class="fixed bottom-5 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 pointer-events-none bg-slate-50 text-slate-950 px-5 py-3 rounded-full font-extrabold text-xs sm:text-sm shadow-2xl border border-purple-300 z-50 transition-all duration-200 flex items-center gap-2">
+    <span id="toastIcon">✅</span>
+    <span id="toastText">Order message copied!</span>
   </div>
 
-  <!-- ========================================================= -->
-  <!-- MODAL 2: LIST YOUR FF ID FOR SALE FORM / DRAWER           -->
-  <!-- ========================================================= -->
-  <div id="listIdModal" class="fixed inset-0 z-50 hidden modal-backdrop flex items-center justify-center p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="listIdModalTitle">
-    <div class="relative w-full max-w-xl rounded-3xl bg-panel border border-white/15 p-6 shadow-2xl space-y-5 my-auto">
-      <div class="flex items-start justify-between gap-3 border-b border-white/10 pb-4">
-        <div>
-          <h2 id="listIdModalTitle" class="font-display text-xl font-bold text-white">List Your FF ID for Sale</h2>
-          <p class="text-xs text-slate-400 mt-0.5">Publish a mock FF ID listing directly to the marketplace grid.</p>
-        </div>
-        <button
-          id="closeListIdModalBtn"
-          type="button"
-          aria-label="Close listing form"
-          class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/10 cursor-pointer"
-        >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-
-      <form id="listIdForm" class="space-y-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label for="newIdUid" class="block text-xs font-semibold text-slate-300 mb-1.5">Player UID *</label>
-            <input
-              id="newIdUid"
-              type="text"
-              required
-              maxlength="16"
-              value="6192847350"
-              class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian border border-white/15 text-sm font-mono text-white focus:outline-none focus:border-amber-400"
-            />
-          </div>
-
-          <div>
-            <label for="newIdNickname" class="block text-xs font-semibold text-slate-300 mb-1.5">Nickname *</label>
-            <input
-              id="newIdNickname"
-              type="text"
-              required
-              maxlength="20"
-              value="STORM•APEX"
-              class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian border border-white/15 text-sm text-white focus:outline-none focus:border-amber-400"
-            />
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div>
-            <label for="newIdLevel" class="block text-xs font-semibold text-slate-300 mb-1.5">Account Level *</label>
-            <input
-              id="newIdLevel"
-              type="number"
-              required
-              min="1"
-              max="120"
-              value="77"
-              class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian border border-white/15 text-sm font-mono text-white focus:outline-none focus:border-amber-400"
-            />
-          </div>
-
-          <div>
-            <label for="newIdRank" class="block text-xs font-semibold text-slate-300 mb-1.5">Rank</label>
-            <select
-              id="newIdRank"
-              class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian border border-white/15 text-sm text-white focus:outline-none focus:border-amber-400 cursor-pointer"
-            >
-              <option value="Diamond">Diamond</option>
-              <option value="Heroic">Heroic</option>
-              <option value="Master">Master</option>
-              <option value="Grandmaster" selected>Grandmaster</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="newIdPrice" class="block text-xs font-semibold text-slate-300 mb-1.5">Asking Price (NPR) *</label>
-            <input
-              id="newIdPrice"
-              type="number"
-              required
-              min="500"
-              max="5000000"
-              value="14500"
-              class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian border border-white/15 text-sm font-mono text-white focus:outline-none focus:border-amber-400"
-            />
-          </div>
-        </div>
-
-        <div>
-          <label for="newIdHighlights" class="block text-xs font-semibold text-slate-300 mb-1.5">Prime / Evo / Bundle Highlights</label>
-          <input
-            id="newIdHighlights"
-            type="text"
-            maxlength="70"
-            value="Prime Lv.6 • Evo MP40 &amp; Draco AK • Cobra Bundle"
-            class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian border border-white/15 text-sm text-white focus:outline-none focus:border-amber-400"
-          />
-        </div>
-
-        <!-- Estimated Fee Box -->
-        <div id="listingFeeEstimateBox" class="rounded-2xl bg-obsidian border border-white/10 p-3.5 flex items-center justify-between text-xs">
-          <span class="text-slate-400">Listing Commission Estimate:</span>
-          <span id="listingFeeEstimateText" class="font-mono font-bold text-emerald-300">5% Fee (रु. 725) • Est. Payout रु. 13,775</span>
-        </div>
-
-        <div class="flex items-center justify-end gap-3 pt-1">
-          <button
-            id="cancelListIdBtn"
-            type="button"
-            class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 cursor-pointer"
-          >
-            Cancel
-          </button>
-          <button
-            type="submit"
-            class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-orange-400 hover:brightness-110 cursor-pointer"
-          >
-            Publish FF ID
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- ========================================================= -->
-  <!-- MODAL 3: BUY ID / MAKE OFFER MODAL                        -->
-  <!-- ========================================================= -->
-  <div id="idActionModal" class="fixed inset-0 z-50 hidden modal-backdrop flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="idActionModalTitle">
-    <div class="relative w-full max-w-md rounded-3xl bg-panel border border-white/15 p-6 shadow-2xl space-y-5">
-      <div class="flex items-start justify-between gap-3">
-        <div>
-          <span id="idActionBadge" class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-400/35 mb-1.5">
-            ESCROW PROTECTED
-          </span>
-          <h2 id="idActionModalTitle" class="font-display text-xl font-bold text-white">FF ID Transaction</h2>
-        </div>
-        <button
-          id="closeIdActionBtn"
-          type="button"
-          aria-label="Close ID action modal"
-          class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/10 cursor-pointer"
-        >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-
-      <div id="idActionSummaryBox" class="rounded-2xl bg-obsidian border border-white/10 p-4 space-y-2 text-xs">
-        <!-- Populated dynamically -->
-      </div>
-
-      <div id="offerInputContainer" class="hidden space-y-1.5">
-        <label for="offerAmountInput" class="block text-xs font-semibold text-slate-300">Your Offer Amount (NPR)</label>
-        <input
-          id="offerAmountInput"
-          type="number"
-          min="100"
-          max="10000000"
-          class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian border border-white/15 text-sm font-mono text-white focus:outline-none focus:border-violet-400"
-        />
-      </div>
-
-      <div class="flex items-center justify-end gap-3">
-        <button
-          id="cancelIdActionBtn"
-          type="button"
-          class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 cursor-pointer"
-        >
-          Cancel
-        </button>
-        <button
-          id="confirmIdActionBtn"
-          type="button"
-          class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-emerald-400 hover:brightness-110 cursor-pointer"
-        >
-          Confirm (Demo)
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ========================================================= -->
-  <!-- MODAL 4: GOOGLE LOGIN / ACCOUNT SWITCHER MODAL            -->
-  <!-- ========================================================= -->
-  <div id="googleAuthModal" class="fixed inset-0 z-50 hidden modal-backdrop flex items-center justify-center p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="googleAuthModalTitle">
-    <div class="relative w-full max-w-lg rounded-3xl bg-panel border border-white/15 p-6 shadow-2xl space-y-5 my-auto">
-      <div class="flex items-start justify-between gap-3 border-b border-white/10 pb-4">
-        <div class="flex items-center gap-3">
-          <span class="w-9 h-9 rounded-full bg-white text-slate-950 font-mono text-base font-extrabold flex items-center justify-center shrink-0">
-            G
-          </span>
-          <div>
-            <h2 id="googleAuthModalTitle" class="font-display text-lg sm:text-xl font-bold text-white">Sign in with Google</h2>
-            <p class="text-xs text-slate-400">Simulated Google OAuth for ID SELLER BRO receipts &amp; wallet</p>
-          </div>
-        </div>
-        <button
-          id="closeGoogleAuthBtn"
-          type="button"
-          aria-label="Close Google sign-in modal"
-          class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/10 cursor-pointer"
-        >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-
-      <!-- Current Signed-In Status Banner -->
-      <div id="currentGoogleSessionBox" class="rounded-2xl bg-obsidian border border-white/10 p-3.5 flex items-center justify-between gap-3 text-xs">
-        <div class="min-w-0">
-          <p class="text-slate-400">Session Status</p>
-          <p id="sessionStatusText" class="font-semibold text-slate-200 truncate">Not signed in (Guest Demo)</p>
-        </div>
-        <button
-          id="signOutGoogleBtn"
-          type="button"
-          class="hidden px-3 py-1.5 rounded-xl text-xs font-semibold bg-rose-500/15 hover:bg-rose-500/25 text-rose-200 border border-rose-400/35 cursor-pointer shrink-0"
-        >
-          Sign Out
-        </button>
-      </div>
-
-      <!-- Preset Google Accounts -->
-      <div class="space-y-2">
-        <p class="text-xs font-semibold text-slate-300">Choose a Demo Google Account</p>
-        <div id="googlePresetAccountsList" class="space-y-2">
-          <!-- Dynamically rendered -->
-        </div>
-      </div>
-
-      <!-- Custom Google Account Form -->
-      <form id="customGoogleForm" class="rounded-2xl bg-panelElev border border-white/10 p-4 space-y-3">
-        <p class="text-xs font-bold text-white">Or Enter Custom Google Profile</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label for="customGoogleName" class="block text-[11px] font-semibold text-slate-300 mb-1">Display Name</label>
-            <input
-              id="customGoogleName"
-              type="text"
-              maxlength="32"
-              placeholder="Aarav Thapa"
-              class="w-full px-3 py-2 rounded-xl bg-obsidian border border-white/15 text-xs text-white focus:outline-none focus:border-cyan-400"
-            />
-          </div>
-          <div>
-            <label for="customGoogleEmail" class="block text-[11px] font-semibold text-slate-300 mb-1">Gmail Address</label>
-            <input
-              id="customGoogleEmail"
-              type="email"
-              maxlength="48"
-              placeholder="aarav.ff@gmail.com"
-              class="w-full px-3 py-2 rounded-xl bg-obsidian border border-white/15 text-xs text-white focus:outline-none focus:border-cyan-400"
-            />
-          </div>
-        </div>
-        <div class="flex justify-end">
-          <button
-            type="submit"
-            class="px-4 py-2 rounded-xl text-xs font-bold text-slate-950 bg-cyan-400 hover:bg-cyan-300 cursor-pointer"
-          >
-            Continue with Google
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- ========================================================= -->
-  <!-- MODAL 5: IN-APP GAMING CENTRE CHECKOUT / WALLET MODAL      -->
-  <!-- ========================================================= -->
-  <div id="centreCheckoutModal" class="fixed inset-0 z-50 hidden modal-backdrop flex items-center justify-center p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="centreCheckoutTitle">
-    <div class="relative w-full max-w-lg rounded-3xl bg-panel border border-cyan-400/35 p-6 shadow-2xl space-y-5 my-auto">
-      <div class="flex items-start justify-between gap-3 border-b border-white/10 pb-4">
-        <div>
-          <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-cyan-500/15 text-cyan-300 border border-cyan-400/30 mb-1">
-            GAMING CENTRE CHECKOUT
-          </span>
-          <h2 id="centreCheckoutTitle" class="font-display text-xl font-bold text-white">Complete Transaction</h2>
-        </div>
-        <button
-          id="closeCentreCheckoutBtn"
-          type="button"
-          aria-label="Close ID SELLER BRO checkout"
-          class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/10 cursor-pointer"
-        >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-
-      <div id="centreCheckoutSummary" class="rounded-2xl bg-obsidian border border-white/10 p-4 space-y-2 text-xs">
-        <!-- Populated dynamically -->
-      </div>
-
-      <div id="checkoutWalletAmountRow" class="hidden space-y-1.5">
-        <label for="walletFundAmountInput" class="block text-xs font-semibold text-slate-300">Wallet Top-Up Amount (NPR)</label>
-        <input
-          id="walletFundAmountInput"
-          type="number"
-          min="100"
-          max="1000000"
-          class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian border border-white/15 text-sm font-mono text-white focus:outline-none focus:border-cyan-400"
-        />
-      </div>
-
-      <div id="checkoutMethodSelectorRow" class="space-y-1.5">
-        <label for="checkoutPaymentSelect" class="block text-xs font-semibold text-slate-300">ID SELLER BRO Payment Channel</label>
-        <select
-          id="checkoutPaymentSelect"
-          class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian border border-white/15 text-sm text-white focus:outline-none focus:border-cyan-400 cursor-pointer"
-        >
-          <option value="Wallet Balance">💼 Store Wallet</option>
-          <option value="eSewa">🟢 eSewa (In-App Demo)</option>
-          <option value="Khalti">🟣 Khalti (In-App Demo)</option>
-          <option value="IME Pay">🔴 IME Pay (In-App Demo)</option>
-          <option value="Fonepay QR">📱 Fonepay QR (In-App Demo)</option>
-        </select>
-      </div>
-
-      <div class="flex items-center justify-end gap-3 pt-1">
-        <button
-          id="cancelCentreCheckoutBtn"
-          type="button"
-          class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 cursor-pointer"
-        >
-          Cancel
-        </button>
-        <button
-          id="confirmCentreCheckoutBtn"
-          type="button"
-          class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold text-slate-950 bg-gradient-to-r from-cyan-400 via-violet-400 to-amber-300 hover:brightness-110 cursor-pointer"
-        >
-          Pay in ID SELLER BRO
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Application Script -->
   <script>
-    (function () {
-      'use strict';
+    /**
+     * Product Catalog Data
+     * Preserves all original NPR pricing, Free Fire diamond packages, games, and premium apps.
+     */
+    const diamonds = [
+      { title: "115 Diamonds", priceNum: 110, tag: "Starter" },
+      { title: "240 Diamonds", priceNum: 210, tag: "Popular" },
+      { title: "355 Diamonds", priceNum: 315, tag: "Pack" },
+      { title: "610 Diamonds", priceNum: 525, tag: "Best value" },
+      { title: "1,090 Diamonds", priceNum: 950, tag: "Mega pack" },
+      { title: "1,240 Diamonds", priceNum: 1045, tag: "Pack" },
+      { title: "2,530 Diamonds", priceNum: 2030, tag: "Mega chest" },
+      { title: "Weekly Membership", priceNum: 210, tag: "Membership" },
+      { title: "Lite Weekly Membership", priceNum: 110, tag: "Membership" },
+      { title: "Monthly Membership", priceNum: 2100, tag: "Membership" }
+    ];
 
-      // Conversion rate for dynamic currency toggle (1 USD = 135 NPR approx.)
-      const USD_TO_NPR = 135;
-      const PRO_PASS_PRICE_NPR = 499;
+    const games = [
+      { title: "PUBG Mobile", desc: "UC top-up, Royale Pass and more", icon: "🎯", tag: "Popular" },
+      { title: "Call of Duty Mobile", desc: "CP top-up, Battle Pass and more", icon: "🪖", tag: "Game top-up" },
+      { title: "Roblox", desc: "Robux and gift cards", icon: "🧱", tag: "Game top-up" },
+      { title: "Mobile Legends", desc: "Diamonds, Starlight and more", icon: "⚔️", tag: "Game top-up" },
+      { title: "Game Gift Cards", desc: "Ask about supported games and regions", icon: "🎁", tag: "Best value" },
+      { title: "Other Games", desc: "Tell us the game and platform", icon: "🎮", tag: "Game top-up" }
+    ];
 
-      // Preset simulated Google accounts
-      const GOOGLE_PRESET_ACCOUNTS = [
-        {
-          id: 'g-1',
-          name: 'Aarav Shrestha',
-          email: 'aarav.ff.np@gmail.com',
-          badge: 'AS'
-        },
-        {
-          id: 'g-2',
-          name: 'Pratiksha Gurung',
-          email: 'pratiksha.topup@gmail.com',
-          badge: 'PG'
-        },
-        {
-          id: 'g-3',
-          name: 'Rohan Tamang',
-          email: 'rohan.proid@gmail.com',
-          badge: 'RT'
-        }
-      ];
+    const apps = [
+      { title: "Spotify Premium", desc: "Music subscription", icon: "🎵", tag: "Popular" },
+      { title: "Netflix", desc: "Movies and series", icon: "🍿", tag: "Popular" },
+      { title: "Crunchyroll", desc: "Anime streaming", icon: "🍥", tag: "Subscription" },
+      { title: "YouTube Premium", desc: "Ad-free video and music", icon: "▶️", tag: "Best value" },
+      { title: "Instagram Premium", desc: "Ask about available services", icon: "📸", tag: "Subscription" },
+      { title: "Disney+", desc: "Movies and series", icon: "✨", tag: "Subscription" },
+      { title: "Canva Pro", desc: "Design tools", icon: "🎨", tag: "Best value" },
+      { title: "ChatGPT Plus", desc: "AI subscription", icon: "🤖", tag: "Popular" }
+    ];
 
-      // Realistic Nepal Free Fire diamond & membership packs priced in NPR (रु.)
-      const DIAMOND_PACKS = [
-        { id: 'd-25', name: '25 Diamonds', baseText: '25 Diamonds', stdBonus: '+5', proBonus: '+12', priceNpr: 35, tag: 'Starter' },
-        { id: 'd-115', name: '115 Diamonds', baseText: '115 Diamonds', stdBonus: '+12', proBonus: '+28', priceNpr: 135, tag: 'Pack' },
-        { id: 'd-240', name: '240 Diamonds', baseText: '240 Diamonds', stdBonus: '+24', proBonus: '+60', priceNpr: 270, tag: 'Popular' },
-        { id: 'd-610', name: '610 Diamonds', baseText: '610 Diamonds', stdBonus: '+61', proBonus: '+155', priceNpr: 680, tag: 'Best Value' },
-        { id: 'd-1240', name: '1,240 Diamonds', baseText: '1,240 Diamonds', stdBonus: '+124', proBonus: '+310', priceNpr: 1380, tag: 'Pack' },
-        { id: 'd-2530', name: '2,530 Diamonds', baseText: '2,530 Diamonds', stdBonus: '+253', proBonus: '+635', priceNpr: 2780, tag: 'Mega Chest' },
-        { id: 'm-weekly', name: 'Weekly Membership', baseText: '450 Diamonds + Daily Perks', stdBonus: '+45', proBonus: '+110', priceNpr: 220, tag: 'Membership' },
-        { id: 'm-monthly', name: 'Monthly Membership', baseText: '2,600 Diamonds + VIP Perks', stdBonus: '+260', proBonus: '+650', priceNpr: 1370, tag: 'Membership' }
-      ];
+    // Helper: Format NPR price consistently
+    const formatMoney = (n) => "Rs. " + n.toLocaleString("en-IN");
 
-      // Local Nepali payment options + store wallet
-      const PAYMENT_METHODS = [
-        {
-          id: 'Wallet Balance',
-          label: '💼 Store Wallet',
-          badge: 'Instant',
-          badgeClass: 'text-cyan-300 font-bold',
-          activeClass: 'bg-cyan-500/10 border-cyan-400 shadow-cyan-pop',
-          hoverClass: 'hover:border-cyan-400/50',
-          desc: 'Deducts directly from your simulated NPR wallet balance.'
-        },
-        {
-          id: 'eSewa',
-          label: '🟢 eSewa',
-          badge: 'Nepal Wallet',
-          badgeClass: 'text-emerald-300 font-bold',
-          activeClass: 'bg-emerald-500/10 border-emerald-400',
-          hoverClass: 'hover:border-emerald-400/50',
-          desc: 'Instant Nepali digital wallet checkout (simulated demo).'
-        },
-        {
-          id: 'Khalti',
-          label: '🟣 Khalti',
-          badge: 'Nepal Wallet',
-          badgeClass: 'text-violet-300 font-bold',
-          activeClass: 'bg-violet-500/10 border-violet-400 shadow-violet-pop',
-          hoverClass: 'hover:border-violet-400/50',
-          desc: 'Fast Khalti mobile checkout flow (simulated demo).'
-        },
-        {
-          id: 'IME Pay',
-          label: '🔴 IME Pay',
-          badge: 'Instant Pay',
-          badgeClass: 'text-rose-300 font-bold',
-          activeClass: 'bg-rose-500/10 border-rose-400',
-          hoverClass: 'hover:border-rose-400/50',
-          desc: 'Express IME Pay mobile wallet top-up (simulated demo).'
-        },
-        {
-          id: 'Fonepay QR',
-          label: '📱 Fonepay QR',
-          badge: 'Scan & Pay',
-          badgeClass: 'text-amber-300 font-bold',
-          activeClass: 'bg-amber-500/10 border-amber-400 shadow-pro-glow',
-          hoverClass: 'hover:border-amber-400/50',
-          desc: 'Scan QR with any Nepal mobile banking app (demo).'
-        }
-      ];
+    // Helper: Canonical dropdown value so card selection and <select> stay 100% synced
+    const getDiamondOptionValue = (d) => `${d.title} — ${formatMoney(d.priceNum)}`;
 
-      // Initial FF ID Marketplace Catalog priced in NPR (रु. 4,500 to रु. 28,500)
-      const INITIAL_FF_IDS = [
-        {
-          id: 'ff-101',
-          uid: '1849203741',
-          nickname: 'NOVA•GRAND',
-          level: 82,
-          rank: 'Grandmaster',
-          highlights: 'Prime Lv.7 • Evo SCAR & MP40 • Sakura Bundle',
-          priceNpr: 28500,
-          escrowVerified: true,
-          featuredPro: true
-        },
-        {
-          id: 'ff-102',
-          uid: '3920184756',
-          nickname: 'VORTEX_RUSH',
-          level: 76,
-          rank: 'Master',
-          highlights: 'Prime Lv.5 • Evo XM8 • Hip Hop & Street Boy',
-          priceNpr: 14800,
-          escrowVerified: true,
-          featuredPro: false
-        },
-        {
-          id: 'ff-103',
-          uid: '5029384712',
-          nickname: 'KAIRO•LITE',
-          level: 67,
-          rank: 'Heroic',
-          highlights: 'Prime Lv.3 • Booyah Pass Bundles • Custom Avatar',
-          priceNpr: 4500,
-          escrowVerified: true,
-          featuredPro: false
-        },
-        {
-          id: 'ff-104',
-          uid: '7748291053',
-          nickname: 'BLAZE•CROWN',
-          level: 79,
-          rank: 'Grandmaster',
-          highlights: 'Prime Lv.6 • Evo UMP & M1014 • Arctic Blue',
-          priceNpr: 21500,
-          escrowVerified: true,
-          featuredPro: true
-        }
-      ];
+    // Application Filter & Storage State
+    const state = {
+      search: "",
+      category: "all",
+      tag: "all"
+    };
 
-      // Initial Order History in NPR
-      const INITIAL_ORDERS = [
-        {
-          id: 'ORD-9041',
-          category: 'TOPUP',
-          title: '610 Diamonds Top-Up',
-          meta: 'UID 2498174620 • Global • eSewa',
-          amountNpr: 680,
-          status: 'Completed (Demo)',
-          time: 'Today, 09:40'
-        },
-        {
-          id: 'ORD-9042',
-          category: 'ID_TRADE',
-          title: 'Offer Sent: VORTEX_RUSH',
-          meta: 'UID 3920184756 • Escrow Protected • Khalti',
-          amountNpr: 13500,
-          status: 'Offer Pending (Demo)',
-          time: 'Yesterday'
-        }
-      ];
+    const STORAGE_KEYS = {
+      name: "idsellerbro_customer_name",
+      player: "idsellerbro_player_id"
+    };
 
-      const state = {
-        activeTab: 'top-up',
-        isPremiumPro: false,
-        currency: 'NPR',
-        walletNpr: 4500.00,
-        selectedPackId: 'd-240',
-        selectedPayment: 'Wallet Balance',
-        idFilter: 'ALL',
-        idSearchQuery: '',
-        orderFilter: 'ALL',
-        googleUser: null,
-        ffIds: [...INITIAL_FF_IDS],
-        orders: [...INITIAL_ORDERS],
-        pendingIdAction: null, // { type: 'BUY' | 'OFFER', listingId: string }
-        pendingCheckout: null // { kind: 'WALLET_TOPUP' | 'PRO_PASS' | 'ID_ESCROW', amountNpr: number, title: string, meta: string, onComplete: Function }
-      };
+    // DOM References
+    const diamondGrid = document.getElementById("diamondGrid");
+    const gameGrid = document.getElementById("gameGrid");
+    const appGrid = document.getElementById("appGrid");
+    const sectionDiamonds = document.getElementById("section-diamonds");
+    const sectionGames = document.getElementById("section-games");
+    const sectionApps = document.getElementById("section-apps");
+    const emptyState = document.getElementById("emptyState");
+    const resultCount = document.getElementById("resultCount");
 
-      const els = {
-        toastContainer: document.getElementById('toastContainer'),
-        adFreeStatusPill: document.getElementById('adFreeStatusPill'),
-        navEditionBadge: document.getElementById('navEditionBadge'),
-        currencyToggleBtn: document.getElementById('currencyToggleBtn'),
-        currencyCodeLabel: document.getElementById('currencyCodeLabel'),
-        walletBalanceDisplay: document.getElementById('walletBalanceDisplay'),
-        topupWalletDemoBtn: document.getElementById('topupWalletDemoBtn'),
-        googleAuthBtn: document.getElementById('googleAuthBtn'),
-        googleAvatarBadge: document.getElementById('googleAvatarBadge'),
-        googleAuthLabel: document.getElementById('googleAuthLabel'),
-        navProToggleBtn: document.getElementById('navProToggleBtn'),
-        navProDot: document.getElementById('navProDot'),
-        navProText: document.getElementById('navProText'),
-        storeTabs: document.querySelectorAll('.store-tab'),
-        tabPanels: document.querySelectorAll('.tab-panel'),
-        idMarketBadgeCount: document.getElementById('idMarketBadgeCount'),
-        orderBadgeCount: document.getElementById('orderBadgeCount'),
-        // Top-Up
-        topupBonusRateText: document.getElementById('topupBonusRateText'),
-        quickEnableProTopupBtn: document.getElementById('quickEnableProTopupBtn'),
-        fillSampleUidBtn: document.getElementById('fillSampleUidBtn'),
-        playerUidInput: document.getElementById('playerUidInput'),
-        serverRegionSelect: document.getElementById('serverRegionSelect'),
-        packModeHint: document.getElementById('packModeHint'),
-        diamondPacksContainer: document.getElementById('diamondPacksContainer'),
-        paymentMethodsContainer: document.getElementById('paymentMethodsContainer'),
-        summaryPackName: document.getElementById('summaryPackName'),
-        summaryUid: document.getElementById('summaryUid'),
-        summaryRegion: document.getElementById('summaryRegion'),
-        summaryTotalReward: document.getElementById('summaryTotalReward'),
-        summaryPriceText: document.getElementById('summaryPriceText'),
-        topUpNowBtn: document.getElementById('topUpNowBtn'),
-        // Receipt Modal
-        receiptModal: document.getElementById('receiptModal'),
-        closeReceiptBtn: document.getElementById('closeReceiptBtn'),
-        receiptDetailsBox: document.getElementById('receiptDetailsBox'),
-        viewOrderHistoryFromReceiptBtn: document.getElementById('viewOrderHistoryFromReceiptBtn'),
-        doneReceiptBtn: document.getElementById('doneReceiptBtn'),
-        // ID Market
-        openListIdModalBtn: document.getElementById('openListIdModalBtn'),
-        idSearchInput: document.getElementById('idSearchInput'),
-        idMarketFilterGroup: document.getElementById('idMarketFilterGroup'),
-        ffIdMarketplaceGrid: document.getElementById('ffIdMarketplaceGrid'),
-        emptyFfIdState: document.getElementById('emptyFfIdState'),
-        // List ID Modal
-        listIdModal: document.getElementById('listIdModal'),
-        closeListIdModalBtn: document.getElementById('closeListIdModalBtn'),
-        cancelListIdBtn: document.getElementById('cancelListIdBtn'),
-        listIdForm: document.getElementById('listIdForm'),
-        newIdUid: document.getElementById('newIdUid'),
-        newIdNickname: document.getElementById('newIdNickname'),
-        newIdLevel: document.getElementById('newIdLevel'),
-        newIdRank: document.getElementById('newIdRank'),
-        newIdPrice: document.getElementById('newIdPrice'),
-        newIdHighlights: document.getElementById('newIdHighlights'),
-        listingFeeEstimateText: document.getElementById('listingFeeEstimateText'),
-        // ID Action Modal (Buy / Offer)
-        idActionModal: document.getElementById('idActionModal'),
-        closeIdActionBtn: document.getElementById('closeIdActionBtn'),
-        cancelIdActionBtn: document.getElementById('cancelIdActionBtn'),
-        idActionBadge: document.getElementById('idActionBadge'),
-        idActionModalTitle: document.getElementById('idActionModalTitle'),
-        idActionSummaryBox: document.getElementById('idActionSummaryBox'),
-        offerInputContainer: document.getElementById('offerInputContainer'),
-        offerAmountInput: document.getElementById('offerAmountInput'),
-        confirmIdActionBtn: document.getElementById('confirmIdActionBtn'),
-        // Premium Pass Tab
-        buyPremiumPassBtn: document.getElementById('buyPremiumPassBtn'),
-        proPassPriceLabel: document.getElementById('proPassPriceLabel'),
-        tierComparisonToggleBtn: document.getElementById('tierComparisonToggleBtn'),
-        // Orders Tab
-        orderFilterGroup: document.getElementById('orderFilterGroup'),
-        orderHistoryList: document.getElementById('orderHistoryList'),
-        // Google Auth Modal
-        googleAuthModal: document.getElementById('googleAuthModal'),
-        closeGoogleAuthBtn: document.getElementById('closeGoogleAuthBtn'),
-        sessionStatusText: document.getElementById('sessionStatusText'),
-        signOutGoogleBtn: document.getElementById('signOutGoogleBtn'),
-        googlePresetAccountsList: document.getElementById('googlePresetAccountsList'),
-        customGoogleForm: document.getElementById('customGoogleForm'),
-        customGoogleName: document.getElementById('customGoogleName'),
-        customGoogleEmail: document.getElementById('customGoogleEmail'),
-        // In-App ID SELLER BRO Checkout Modal
-        centreCheckoutModal: document.getElementById('centreCheckoutModal'),
-        closeCentreCheckoutBtn: document.getElementById('closeCentreCheckoutBtn'),
-        cancelCentreCheckoutBtn: document.getElementById('cancelCentreCheckoutBtn'),
-        centreCheckoutTitle: document.getElementById('centreCheckoutTitle'),
-        centreCheckoutSummary: document.getElementById('centreCheckoutSummary'),
-        checkoutWalletAmountRow: document.getElementById('checkoutWalletAmountRow'),
-        walletFundAmountInput: document.getElementById('walletFundAmountInput'),
-        checkoutMethodSelectorRow: document.getElementById('checkoutMethodSelectorRow'),
-        checkoutPaymentSelect: document.getElementById('checkoutPaymentSelect'),
-        confirmCentreCheckoutBtn: document.getElementById('confirmCentreCheckoutBtn')
-      };
+    const searchInput = document.getElementById("searchInput");
+    const clearSearchBtn = document.getElementById("clearSearchBtn");
+    const itemSelect = document.getElementById("item");
+    const playerInput = document.getElementById("player");
+    const nameInput = document.getElementById("name");
+    const noteInput = document.getElementById("note");
+    const messagePreview = document.getElementById("messagePreview");
+    const savedControls = document.getElementById("savedControls");
+    const savedBadge = document.getElementById("savedBadge");
 
-      function escapeHtml(text) {
-      function getAccountTag() {
-        return state.googleUser ? `${state.googleUser.name} (${state.googleUser.email})` : 'Guest Session';
-      }
+    /**
+     * Populate Product Dropdown (<select id="item">)
+     * Uses exact canonical values matching each card's data-option attribute.
+     */
+    function populateDropdown() {
+      const diamondGroup = document.createElement("optgroup");
+      diamondGroup.label = "💎 Free Fire Diamonds (NPR)";
+      diamonds.forEach((d) => {
+        const val = getDiamondOptionValue(d);
+        const opt = document.createElement("option");
+        opt.value = val;
+        opt.textContent = val;
+        diamondGroup.appendChild(opt);
+      });
 
-      function syncGlobalHeader() {
-        const pro = state.isPremiumPro;
-        els.currencyCodeLabel.textContent = state.currency === 'NPR' ? 'NPR (रु.)' : 'USD ($)';
-        els.walletBalanceDisplay.textContent = formatMoney(state.walletNpr);
-        els.topupWalletDemoBtn.textContent = `+${formatMoney(1000, { compactNpr: true })}`;
-        els.topupWalletDemoBtn.title = `Fund ID SELLER BRO wallet (${formatMoney(1000, { compactNpr: true })})`;
-        els.proPassPriceLabel.textContent = formatMoney(PRO_PASS_PRICE_NPR, { compactNpr: true });
-        els.idMarketBadgeCount.textContent = String(state.ffIds.length);
-        els.orderBadgeCount.textContent = String(state.orders.length);
+      const gameGroup = document.createElement("optgroup");
+      gameGroup.label = "🎮 Game Top-ups & Gift Cards";
+      games.forEach((g) => {
+        const opt = document.createElement("option");
+        opt.value = g.title;
+        opt.textContent = g.title;
+        gameGroup.appendChild(opt);
+      });
 
-        if (state.googleUser) {
-          els.googleAvatarBadge.textContent = state.googleUser.badge;
-          els.googleAvatarBadge.className = 'w-5 h-5 rounded-full bg-cyan-400 text-slate-950 font-mono text-[10px] font-extrabold flex items-center justify-center shrink-0';
-          els.googleAuthLabel.textContent = state.googleUser.name;
-          els.googleAuthBtn.className = 'inline-flex items-center gap-2 px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition-all cursor-pointer bg-cyan-500/10 border-cyan-400/40 text-cyan-200 hover:border-cyan-300';
-        } else {
-          els.googleAvatarBadge.textContent = 'G';
-          els.googleAvatarBadge.className = 'w-5 h-5 rounded-full bg-white text-slate-950 font-mono text-[11px] font-extrabold flex items-center justify-center shrink-0';
-          els.googleAuthLabel.textContent = 'Sign in with Google';
-          els.googleAuthBtn.className = 'inline-flex items-center gap-2 px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition-all cursor-pointer bg-panelElev border-white/15 text-white hover:border-cyan-400/50';
-        }
+      const appGroup = document.createElement("optgroup");
+      appGroup.label = "👑 Premium Apps";
+      apps.forEach((a) => {
+        const opt = document.createElement("option");
+        opt.value = a.title;
+        opt.textContent = a.title;
+        appGroup.appendChild(opt);
+      });
 
-        els.adFreeStatusPill.classList.toggle('hidden', !pro);
-        els.navEditionBadge.textContent = pro ? 'PREMIUM PRO' : 'FREE TIER';
-        els.navEditionBadge.className = pro
-          ? 'hidden sm:inline-flex px-2 py-0.5 rounded-full text-[10px] font-bold uppercase bg-amber-500/20 text-amber-300 border border-amber-400/40'
-          : 'hidden sm:inline-flex px-2 py-0.5 rounded-full text-[10px] font-bold uppercase bg-white/10 text-slate-300 border border-white/15';
+      itemSelect.appendChild(diamondGroup);
+      itemSelect.appendChild(gameGroup);
+      itemSelect.appendChild(appGroup);
+    }
 
-        els.navProToggleBtn.setAttribute('aria-pressed', String(pro));
-        els.navProToggleBtn.className = pro
-          ? 'inline-flex items-center gap-2 px-3 py-2 rounded-xl text-xs sm:text-sm font-bold border transition-all cursor-pointer bg-amber-500/20 border-amber-400/60 text-amber-200 shadow-pro-glow'
-          : 'inline-flex items-center gap-2 px-3 py-2 rounded-xl text-xs sm:text-sm font-bold border transition-all cursor-pointer bg-panelElev border-white/15 text-slate-200 hover:border-amber-400/50';
-        els.navProDot.className = pro ? 'w-2.5 h-2.5 rounded-full bg-amber-400' : 'w-2.5 h-2.5 rounded-full bg-slate-400';
-        els.navProText.textContent = pro ? 'Premium Pro: ON' : 'Premium Pro: OFF';
+    /**
+     * Render Individual Product Card HTML
+     */
+    function createCardHTML({ title, desc, icon, priceDisplay, tag, actionLabel, optionValue }) {
+      const isHighlight = tag === "Popular" || tag === "Best value";
+      const tagStyle = isHighlight
+        ? "text-yellow-300 border-yellow-400/40 bg-yellow-400/10"
+        : "text-[#22d3ee] border-cyan-500/30 bg-cyan-950/40";
 
-        els.topupBonusRateText.textContent = pro ? '★ VIP Bonus Boost (+140%)' : 'Standard Rate';
-        els.topupBonusRateText.className = pro
-          ? 'font-mono text-sm sm:text-base font-bold text-amber-300 mt-0.5'
-          : 'font-mono text-sm sm:text-base font-bold text-cyan-300 mt-0.5';
-        els.packModeHint.textContent = pro
-          ? 'Premium Pro active: highlighted +Bonus diamonds unlocked'
-          : 'Toggle Premium Pro to boost +Bonus diamonds';
-      }
+      // Escape quotes safely for HTML attribute
+      const safeOption = optionValue.replace(/"/g, "&quot;");
 
-      function renderGoogleModalContent() {
-        if (state.googleUser) {
-          els.sessionStatusText.textContent = `${state.googleUser.name} • ${state.googleUser.email}`;
-          els.sessionStatusText.className = 'font-semibold text-cyan-300 truncate';
-          els.signOutGoogleBtn.classList.remove('hidden');
-        } else {
-          els.sessionStatusText.textContent = 'Not signed in (Guest ID SELLER BRO Session)';
-          els.sessionStatusText.className = 'font-semibold text-slate-300 truncate';
-          els.signOutGoogleBtn.classList.add('hidden');
-        }
-
-        els.googlePresetAccountsList.innerHTML = GOOGLE_PRESET_ACCOUNTS.map((acc) => {
-          const isCurrent = state.googleUser && state.googleUser.email === acc.email;
-          return `
-            <button
-              type="button"
-              data-google-id="${escapeHtml(acc.id)}"
-              class="google-preset-btn w-full text-left rounded-2xl p-3.5 border transition-all flex items-center justify-between gap-3 cursor-pointer ${
-                isCurrent
-                  ? 'bg-cyan-500/10 border-cyan-400/50'
-                  : 'bg-obsidian hover:bg-panelElev border-white/10 hover:border-cyan-400/40'
-              }"
-            >
-              <div class="flex items-center gap-3 min-w-0">
-                <span class="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-400 to-violet-500 text-slate-950 font-mono text-xs font-extrabold flex items-center justify-center shrink-0">
-                  ${escapeHtml(acc.badge)}
-                </span>
-                <div class="min-w-0">
-                  <p class="text-xs sm:text-sm font-bold text-white truncate">${escapeHtml(acc.name)}</p>
-                  <p class="text-[11px] font-mono text-slate-400 truncate">${escapeHtml(acc.email)}</p>
-                </div>
-              </div>
-              <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold shrink-0 ${
-                isCurrent ? 'bg-cyan-400 text-slate-950' : 'bg-white/10 text-slate-200'
-              }">
-                ${isCurrent ? 'Active' : 'Select'}
-              </span>
+      return `
+        <article class="group bg-gradient-to-br from-[#171329] to-[#0e0c19] border border-[#30234d] hover:border-purple-500 rounded-2xl p-5 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:shadow-neon-purple">
+          <div>
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-3xl select-none transition-transform duration-200 group-hover:scale-110">${icon}</span>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full border ${tagStyle}">${tag}</span>
+            </div>
+            <h3 class="text-base sm:text-lg font-extrabold text-white mt-3 mb-1">${title}</h3>
+            <p class="text-[#b8b2ca] text-xs sm:text-sm min-h-[36px]">${desc}</p>
+          </div>
+          <div class="mt-3">
+            <div class="text-xl sm:text-2xl font-black text-[#facc15] mb-3.5">${priceDisplay}</div>
+            <button type="button"
+                    data-select-option="${safeOption}"
+                    class="select-pkg-btn w-full py-2.5 px-3.5 rounded-xl border border-purple-500/80 bg-gradient-to-r from-violet-600/90 to-fuchsia-600/90 hover:from-violet-500 hover:to-fuchsia-500 text-white font-extrabold text-xs sm:text-sm transition-all active:scale-95 cursor-pointer">
+              ${actionLabel}
             </button>
-          `;
-        }).join('');
-      }
-
-      function openGoogleAuthModal() {
-        renderGoogleModalContent();
-        els.googleAuthModal.classList.remove('hidden');
-      }
-
-      function closeGoogleAuthModal() {
-        els.googleAuthModal.classList.add('hidden');
-      }
-
-      function signInWithGoogleProfile(name, email) {
-        const cleanName = (name || '').trim() || 'Gamer Account';
-        const cleanEmail = (email || '').trim() || 'gamer.np@gmail.com';
-        const parts = cleanName.split(/\s+/).filter(Boolean);
-        const badge = parts.length >= 2
-          ? `${parts[0][0]}${parts[1][0]}`.toUpperCase()
-          : cleanName.slice(0, 2).toUpperCase();
-
-        state.googleUser = {
-          name: cleanName,
-          email: cleanEmail,
-          badge
-        };
-
-        syncGlobalHeader();
-        renderGoogleModalContent();
-        closeGoogleAuthModal();
-        showToast(`Signed in with Google as ${cleanName}`, 'success');
-      }
-
-      function signOutGoogleProfile() {
-        state.googleUser = null;
-        syncGlobalHeader();
-        renderGoogleModalContent();
-        showToast('Signed out of Google account.', 'info');
-      }
-
-      function openCentreCheckout(config) {
-        state.pendingCheckout = config;
-        els.centreCheckoutTitle.textContent = config.title;
-        els.checkoutWalletAmountRow.classList.toggle('hidden', config.kind !== 'WALLET_TOPUP');
-        els.checkoutMethodSelectorRow.classList.toggle('hidden', Boolean(config.hidePaymentSelect));
-        els.checkoutPaymentSelect.value = state.selectedPayment;
-
-        if (config.kind === 'WALLET_TOPUP') {
-          els.walletFundAmountInput.value = nprToInputValue(config.amountNpr || 1000);
-        }
-
-        refreshCentreCheckoutSummary();
-        els.centreCheckoutModal.classList.remove('hidden');
-      }
-
-      function refreshCentreCheckoutSummary() {
-        if (!state.pendingCheckout) return;
-        const cfg = state.pendingCheckout;
-        const effectiveNpr = cfg.kind === 'WALLET_TOPUP'
-          ? inputAmountToNpr(els.walletFundAmountInput.value)
-          : cfg.amountNpr;
-        const channel = cfg.fixedChannel || els.checkoutPaymentSelect.value;
-
-        els.centreCheckoutSummary.innerHTML = `
-          <div class="flex justify-between text-slate-400">
-            <span>Google Account</span>
-            <span class="font-mono text-cyan-300 truncate max-w-[230px]">${escapeHtml(getAccountTag())}</span>
           </div>
-          <div class="flex justify-between text-slate-400">
-            <span>Action</span>
-            <span class="text-white font-semibold">${escapeHtml(cfg.detailLabel)}</span>
-          </div>
-          <div class="flex justify-between text-slate-400">
-            <span>ID SELLER BRO Channel</span>
-            <span class="text-slate-200 font-semibold">${escapeHtml(channel)}</span>
-          </div>
-          <div class="flex justify-between text-slate-400">
-            <span>Current Store Wallet</span>
-            <span class="font-mono text-cyan-300">${formatMoney(state.walletNpr)}</span>
-          </div>
-          <div class="flex justify-between pt-2 border-t border-white/10 text-sm font-bold text-white">
-            <span>${cfg.kind === 'WALLET_TOPUP' ? 'Credit Amount' : 'Total Amount'}</span>
-            <span class="font-mono text-emerald-300">${formatMoney(effectiveNpr, { compactNpr: true })}</span>
-          </div>
-        `;
-      }
+        </article>
+      `;
+    }
 
-      function closeCentreCheckout() {
-        els.centreCheckoutModal.classList.add('hidden');
-        state.pendingCheckout = null;
-      }
+    /**
+     * Filter & Render All Catalog Grids
+     */
+    function renderCatalog() {
+      const q = state.search.trim().toLowerCase();
 
-      function togglePremiumPro(forceVal) {
-        state.isPremiumPro = typeof forceVal === 'boolean' ? forceVal : !state.isPremiumPro;
-        syncGlobalHeader();
-        renderDiamondPacks();
-        updateTopupSummary();
-        renderFfIdMarketplace();
-        updateListingFeeEstimate();
-        showToast(
-          state.isPremiumPro
-            ? 'Premium Pro ON: +Bonus diamonds & 0% listing fee unlocked!'
-            : 'Switched to Free Tier.',
-          state.isPremiumPro ? 'pro' : 'info'
+      const matchesFilter = (item, categoryName) => {
+        if (state.category !== "all" && state.category !== categoryName) return false;
+        if (state.tag !== "all" && item.tag.toLowerCase() !== state.tag.toLowerCase()) return false;
+        if (!q) return true;
+
+        const haystack = `${item.title} ${item.desc || ""} ${item.tag} ${item.priceNum || ""}`.toLowerCase();
+        return haystack.includes(q);
+      };
+
+      const filteredDiamonds = diamonds.filter((d) =>
+        matchesFilter({ ...d, desc: "Free Fire top-up • Nepal" }, "diamonds")
+      );
+      const filteredGames = games.filter((g) => matchesFilter(g, "games"));
+      const filteredApps = apps.filter((a) => matchesFilter(a, "apps"));
+
+      // Render Diamonds
+      diamondGrid.innerHTML = filteredDiamonds
+        .map((d) =>
+          createCardHTML({
+            title: d.title,
+            desc: "Free Fire top-up • Nepal",
+            icon: "💎",
+            priceDisplay: formatMoney(d.priceNum),
+            tag: d.tag,
+            actionLabel: "Select package",
+            optionValue: getDiamondOptionValue(d)
+          })
+        )
+        .join("");
+
+      // Render Games
+      gameGrid.innerHTML = filteredGames
+        .map((g) =>
+          createCardHTML({
+            title: g.title,
+            desc: g.desc,
+            icon: g.icon,
+            priceDisplay: "Ask for price",
+            tag: g.tag,
+            actionLabel: "Enquire",
+            optionValue: g.title
+          })
+        )
+        .join("");
+
+      // Render Apps
+      appGrid.innerHTML = filteredApps
+        .map((a) =>
+          createCardHTML({
+            title: a.title,
+            desc: a.desc,
+            icon: a.icon,
+            priceDisplay: "Ask for price",
+            tag: a.tag,
+            actionLabel: "Enquire",
+            optionValue: a.title
+          })
+        )
+        .join("");
+
+      // Toggle Section Visibility
+      sectionDiamonds.classList.toggle("hidden", filteredDiamonds.length === 0);
+      sectionGames.classList.toggle("hidden", filteredGames.length === 0);
+      sectionApps.classList.toggle("hidden", filteredApps.length === 0);
+
+      const totalVisible = filteredDiamonds.length + filteredGames.length + filteredApps.length;
+      emptyState.classList.toggle("hidden", totalVisible > 0);
+
+      resultCount.textContent =
+        totalVisible === 1 ? "Showing 1 product" : `Showing ${totalVisible} products`;
+
+      updateFilterPillStyles();
+    }
+
+    /**
+     * Update Active Pill & Tag Styling
+     */
+    function updateFilterPillStyles() {
+      document.querySelectorAll(".cat-pill").forEach((btn) => {
+        const isActive = btn.dataset.category === state.category;
+        btn.className = isActive
+          ? "cat-pill px-3.5 py-2 rounded-xl text-xs sm:text-sm font-extrabold border border-purple-400 bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white shadow-md transition-all cursor-pointer"
+          : "cat-pill px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold border border-[#453568] bg-[#171326] text-[#b8b2ca] hover:text-white hover:border-purple-500/60 transition-all cursor-pointer";
+      });
+
+      document.querySelectorAll(".tag-pill").forEach((btn) => {
+        const isActive = btn.dataset.tag === state.tag;
+        btn.className = isActive
+          ? "tag-pill px-3 py-1.5 rounded-full text-xs font-extrabold border border-[#22d3ee] bg-cyan-500/20 text-[#22d3ee] transition-all cursor-pointer"
+          : "tag-pill px-3 py-1.5 rounded-full text-xs font-bold border border-[#30234d] bg-[#090814] text-[#b8b2ca] hover:text-white hover:border-[#22d3ee]/50 transition-all cursor-pointer";
+      });
+    }
+
+    /**
+     * Format & Update Live Order Message Preview
+     */
+    function buildOrderMessage() {
+      const selectedProduct = itemSelect.value || "[Choose a product above]";
+      const customerName = nameInput.value.trim() || "Not provided";
+      const playerID = playerInput.value.trim() || "Not applicable";
+      const extraNote = noteInput.value.trim() || "None";
+
+      return [
+        `Hello @ID_seller_bro! I want to order: ${selectedProduct}`,
+        `Name: ${customerName}`,
+        `Player ID: ${playerID}`,
+        `Note: ${extraNote}`,
+        `Please confirm availability and payment details.`
+      ].join("\n");
+    }
+
+    function updateOrderPreview() {
+      messagePreview.textContent = buildOrderMessage();
+    }
+
+    /**
+     * Copy Text to Clipboard (with iframe-safe fallback)
+     */
+    function copyTextToClipboard(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(
+          () => showToast("Order message copied! Paste it on Instagram DM."),
+          () => fallbackCopy(text)
         );
+      } else {
+        fallbackCopy(text);
       }
+    }
 
-      function switchTab(tabName) {
-        state.activeTab = tabName;
-        els.storeTabs.forEach((btn) => {
-          const active = btn.dataset.tab === tabName;
-          btn.className = active
-            ? 'store-tab active inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer shrink-0 bg-gradient-to-r from-cyan-400 to-violet-500 text-slate-950 shadow-cyan-pop'
-            : 'store-tab inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer shrink-0 bg-panel text-slate-300 border border-white/10 hover:border-cyan-400/40 hover:text-white';
-        });
-
-        els.tabPanels.forEach((panel) => {
-          panel.classList.toggle('hidden', panel.id !== `tab-${tabName}`);
-        });
+    function fallbackCopy(text) {
+      const tempArea = document.createElement("textarea");
+      tempArea.value = text;
+      tempArea.style.position = "fixed";
+      tempArea.style.left = "-9999px";
+      document.body.appendChild(tempArea);
+      tempArea.select();
+      try {
+        document.execCommand("copy");
+        showToast("Order message copied! Paste it on Instagram DM.");
+      } catch (err) {
+        showToast("Select and copy the message from the preview box.", "⚠️");
       }
+      document.body.removeChild(tempArea);
+    }
 
-      function renderDiamondPacks() {
-        try {
-          els.diamondPacksContainer.innerHTML = DIAMOND_PACKS.map((pack) => {
-            const isSelected = pack.id === state.selectedPackId;
-            const bonusDisplay = state.isPremiumPro ? pack.proBonus : pack.stdBonus;
+    /**
+     * Toast Notification Helper
+     */
+    let toastTimer = null;
+    function showToast(message, icon = "✅") {
+      const toast = document.getElementById("toast");
+      document.getElementById("toastText").textContent = message;
+      document.getElementById("toastIcon").textContent = icon;
 
-            return `
-              <button
-                type="button"
-                data-pack-id="${escapeHtml(pack.id)}"
-                class="diamond-pack-card text-left rounded-2xl p-4 border transition-all flex flex-col justify-between gap-3 cursor-pointer ${
-                  isSelected
-                    ? 'bg-panelElev border-cyan-400 shadow-cyan-pop'
-                    : 'bg-obsidian/90 border-white/10 hover:border-violet-400/50'
-                }"
-              >
-                <div class="space-y-2">
-                  <div class="flex items-center justify-between gap-2">
-                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold uppercase bg-white/10 text-slate-300">
-                      ${escapeHtml(pack.tag)}
-                    </span>
-                    <span class="px-2 py-0.5 rounded-full text-[11px] font-mono font-bold ${
-                      state.isPremiumPro
-                        ? 'bg-amber-400/20 text-amber-300 border border-amber-300/40 animate-pulse'
-                        : 'bg-cyan-500/15 text-cyan-300 border border-cyan-400/30'
-                    }">
-                      ${escapeHtml(bonusDisplay)} Bonus
-                    </span>
-                  </div>
+      toast.classList.remove("opacity-0", "translate-y-4", "pointer-events-none");
+      toast.classList.add("opacity-100", "translate-y-0");
 
-                  <p class="font-display text-base sm:text-lg font-bold text-white leading-snug">
-                    ${escapeHtml(pack.baseText)}
-                  </p>
-                </div>
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add("opacity-0", "translate-y-4", "pointer-events-none");
+        toast.classList.remove("opacity-100", "translate-y-0");
+      }, 2800);
+    }
 
-                <div class="pt-2 border-t border-white/10 flex items-center justify-between">
-                  <span class="font-mono text-sm font-bold text-emerald-300">${formatMoney(pack.priceNpr, { compactNpr: true })}</span>
-                  <span class="text-[11px] font-semibold ${isSelected ? 'text-cyan-300' : 'text-slate-400'}">
-                    ${isSelected ? 'Selected ✓' : 'Select'}
-                  </span>
-                </div>
-              </button>
-            `;
-          }).join('');
-        } catch (err) {
-          console.error('Diamond packs render error:', err);
-        }
+    /**
+     * localStorage Persistence for Customer Name & Player ID
+     */
+    function loadSavedCustomerInfo() {
+      try {
+        const savedName = localStorage.getItem(STORAGE_KEYS.name) || "";
+        const savedPlayer = localStorage.getItem(STORAGE_KEYS.player) || "";
+        if (savedName) nameInput.value = savedName;
+        if (savedPlayer) playerInput.value = savedPlayer;
+        syncSavedIndicator();
+      } catch (e) {
+        // Ignore storage errors in restricted environments
       }
+    }
 
-      function renderPaymentMethods() {
-        try {
-          els.paymentMethodsContainer.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5';
-          els.paymentMethodsContainer.innerHTML = PAYMENT_METHODS.map((pm) => {
-            const active = pm.id === state.selectedPayment;
-            return `
-              <button
-                type="button"
-                data-payment="${escapeHtml(pm.id)}"
-                class="payment-card text-left rounded-2xl p-4 border transition-all cursor-pointer flex flex-col justify-between gap-2 ${
-                  active ? `selected ${pm.activeClass}` : `bg-obsidian border-white/10 ${pm.hoverClass}`
-                }"
-              >
-                <div class="flex items-center justify-between gap-2">
-                  <span class="text-sm font-bold text-white">${escapeHtml(pm.label)}</span>
-                  <span class="text-[10px] font-mono ${pm.badgeClass}">${escapeHtml(pm.badge)}</span>
-                </div>
-                <p class="text-[11px] text-slate-300 leading-relaxed">${escapeHtml(pm.desc)}</p>
-              </button>
-            `;
-          }).join('');
-        } catch (err) {
-          console.error('Payment methods render error:', err);
-        }
+    function saveCustomerInfo() {
+      try {
+        const n = nameInput.value.trim();
+        const p = playerInput.value.trim();
+        if (n) localStorage.setItem(STORAGE_KEYS.name, n);
+        else localStorage.removeItem(STORAGE_KEYS.name);
+
+        if (p) localStorage.setItem(STORAGE_KEYS.player, p);
+        else localStorage.removeItem(STORAGE_KEYS.player);
+
+        syncSavedIndicator();
+      } catch (e) {
+        // Ignore storage errors
       }
+    }
 
-      function updateTopupSummary() {
-        const pack = DIAMOND_PACKS.find((p) => p.id === state.selectedPackId) || DIAMOND_PACKS[2];
-        const uid = els.playerUidInput.value.trim() || 'Not entered';
-        const region = els.serverRegionSelect.value;
-        const bonus = state.isPremiumPro ? pack.proBonus : pack.stdBonus;
+    function syncSavedIndicator() {
+      const hasSaved = Boolean(nameInput.value.trim() || playerInput.value.trim());
+      savedControls.classList.toggle("hidden", !hasSaved);
+      savedBadge.classList.toggle("hidden", !hasSaved);
+    }
 
-        els.summaryPackName.textContent = pack.name;
-        els.summaryUid.textContent = uid;
-        els.summaryRegion.textContent = region;
-        els.summaryTotalReward.textContent = `${pack.baseText} (${bonus} Bonus)`;
-        els.summaryPriceText.textContent = formatMoney(pack.priceNpr, { compactNpr: true });
-      }
+    /**
+     * Event Listeners Setup
+     */
+    // Delegate card "Select package" / "Enquire" button clicks
+    document.getElementById("catalogContainer").addEventListener("click", (e) => {
+      const btn = e.target.closest(".select-pkg-btn");
+      if (!btn) return;
 
-      function addOrderRecord(entry) {
-        state.orders.unshift(entry);
-        syncGlobalHeader();
-        renderOrderHistory();
-      }
+      const optionVal = btn.getAttribute("data-select-option");
+      itemSelect.value = optionVal;
+      updateOrderPreview();
 
-      function openReceiptModal(receipt) {
-        els.receiptDetailsBox.innerHTML = `
-          <div class="flex justify-between text-slate-400">
-            <span>Receipt ID</span>
-            <span class="font-mono text-cyan-300 font-bold">${escapeHtml(receipt.id)}</span>
-          </div>
-          <div class="flex justify-between text-slate-400">
-            <span>Google Account</span>
-            <span class="font-mono text-slate-200 truncate max-w-[220px]">${escapeHtml(receipt.account || getAccountTag())}</span>
-          </div>
-          <div class="flex justify-between text-slate-400">
-            <span>Player UID</span>
-            <span class="font-mono text-white font-semibold">${escapeHtml(receipt.uid)} (${escapeHtml(receipt.region)})</span>
-          </div>
-          <div class="flex justify-between text-slate-400">
-            <span>Package</span>
-            <span class="text-white font-semibold">${escapeHtml(receipt.packName)}</span>
-          </div>
-          <div class="flex justify-between text-slate-400">
-            <span>Bonus Tier</span>
-            <span class="font-mono ${state.isPremiumPro ? 'text-amber-300 font-bold' : 'text-cyan-300'}">${escapeHtml(receipt.bonusLabel)}</span>
-          </div>
-          <div class="flex justify-between text-slate-400">
-            <span>Payment Method</span>
-            <span class="text-slate-200">${escapeHtml(receipt.paymentMethod)}</span>
-          </div>
-          <div class="flex justify-between pt-2 border-t border-white/10 text-sm font-bold text-white">
-            <span>Total Charged</span>
-            <span class="font-mono text-emerald-300">${formatMoney(receipt.priceNpr, { compactNpr: true })}</span>
-          </div>
-        `;
-        els.receiptModal.classList.remove('hidden');
-      }
+      // Highlight select briefly to confirm selection
+      itemSelect.classList.add("border-[#facc15]", "ring-2", "ring-yellow-400/30");
+      setTimeout(() => {
+        itemSelect.classList.remove("border-[#facc15]", "ring-2", "ring-yellow-400/30");
+      }, 1200);
 
-      function closeReceiptModal() {
-        els.receiptModal.classList.add('hidden');
-      }
+      document.getElementById("order").scrollIntoView({ behavior: "smooth" });
+      showToast(`Selected: ${optionVal}`, "🎯");
+    });
 
-      function getFilteredFfIds() {
-        const q = state.idSearchQuery.trim().toLowerCase();
-        return state.ffIds.filter((item) => {
-          const filterOk =
-            state.idFilter === 'ALL' ||
-            (state.idFilter === 'GRANDMASTER_MASTER' && (item.rank === 'Grandmaster' || item.rank === 'Master')) ||
-            (state.idFilter === 'LV75_PLUS' && item.level >= 75);
+    // Live Search Input
+    searchInput.addEventListener("input", (e) => {
+      state.search = e.target.value;
+      clearSearchBtn.classList.toggle("hidden", !state.search);
+      clearSearchBtn.classList.toggle("flex", Boolean(state.search));
+      renderCatalog();
+    });
 
-          const searchOk =
-            !q ||
-            item.uid.toLowerCase().includes(q) ||
-            item.nickname.toLowerCase().includes(q) ||
-            item.rank.toLowerCase().includes(q) ||
-            item.highlights.toLowerCase().includes(q);
+    clearSearchBtn.addEventListener("click", () => {
+      state.search = "";
+      searchInput.value = "";
+      clearSearchBtn.classList.add("hidden");
+      clearSearchBtn.classList.remove("flex");
+      renderCatalog();
+      searchInput.focus();
+    });
 
-          return filterOk && searchOk;
-        });
-      }
-
-      function renderFfIdMarketplace() {
-        try {
-          els.idMarketBadgeCount.textContent = String(state.ffIds.length);
-          const list = getFilteredFfIds();
-
-          if (list.length === 0) {
-            els.ffIdMarketplaceGrid.innerHTML = '';
-            els.emptyFfIdState.classList.remove('hidden');
-            return;
-          }
-
-          els.emptyFfIdState.classList.add('hidden');
-
-          els.ffIdMarketplaceGrid.innerHTML = list.map((item) => {
-            const isPriority = item.featuredPro || state.isPremiumPro;
-            return `
-              <article class="rounded-2xl bg-panel border ${
-                isPriority ? 'border-amber-400/50 shadow-pro-glow' : 'border-white/10 hover:border-cyan-400/40'
-              } p-5 flex flex-col justify-between gap-4 transition-all">
-                <div class="space-y-3">
-                  <div class="flex items-center justify-between gap-2 flex-wrap">
-                    <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-violet-500/20 text-violet-200 border border-violet-400/35">
-                      ${escapeHtml(item.rank)} • Lv.${escapeHtml(item.level)}
-                    </span>
-                    <div class="flex items-center gap-1.5">
-                      ${
-                        item.escrowVerified
-                          ? '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-400/30">🛡 Escrow Verified</span>'
-                          : ''
-                      }
-                      ${
-                        isPriority
-                          ? '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-400/20 text-amber-300 border border-amber-300/40">★ Priority</span>'
-                          : ''
-                      }
-                    </div>
-                  </div>
-
-                  <div>
-                    <h3 class="font-display text-lg font-bold text-white truncate">${escapeHtml(item.nickname)}</h3>
-                    <p class="text-xs font-mono text-cyan-300 mt-0.5">UID: ${escapeHtml(item.uid)}</p>
-                  </div>
-
-                  <p class="text-xs text-slate-300 bg-obsidian/80 border border-white/5 rounded-xl p-3 leading-relaxed">
-                    ${escapeHtml(item.highlights)}
-                  </p>
-                </div>
-
-                <div class="pt-3 border-t border-white/10 flex items-center justify-between gap-2">
-                  <div>
-                    <p class="text-[10px] uppercase text-slate-400">Price</p>
-                    <p class="font-mono text-lg font-bold text-emerald-300">${formatMoney(item.priceNpr, { compactNpr: true })}</p>
-                  </div>
-
-                  <div class="flex items-center gap-2">
-                    <button
-                      type="button"
-                      data-action="OFFER"
-                      data-id="${escapeHtml(item.id)}"
-                      class="id-action-trigger px-3 py-2 rounded-xl text-xs font-bold bg-white/5 hover:bg-white/15 text-slate-200 border border-white/15 cursor-pointer"
-                    >
-                      Make Offer
-                    </button>
-                    <button
-                      type="button"
-                      data-action="BUY"
-                      data-id="${escapeHtml(item.id)}"
-                      class="id-action-trigger px-3.5 py-2 rounded-xl text-xs font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-amber-300 hover:brightness-110 cursor-pointer"
-                    >
-                      Buy ID
-                    </button>
-                  </div>
-                </div>
-              </article>
-            `;
-          }).join('');
-        } catch (err) {
-          console.error('FF ID grid error:', err);
-        }
-      }
-
-      function updateListingFeeEstimate() {
-        const priceNpr = inputAmountToNpr(els.newIdPrice.value);
-        if (state.isPremiumPro) {
-          els.listingFeeEstimateText.textContent = `0% Pro Fee (${formatMoney(0, { compactNpr: true })}) • Est. Payout ${formatMoney(priceNpr, { compactNpr: true })}`;
-          els.listingFeeEstimateText.className = 'font-mono font-bold text-amber-300';
-        } else {
-          const feeNpr = Math.round(priceNpr * 0.05);
-          const payoutNpr = priceNpr - feeNpr;
-          els.listingFeeEstimateText.textContent = `5% Fee (${formatMoney(feeNpr, { compactNpr: true })}) • Est. Payout ${formatMoney(payoutNpr, { compactNpr: true })}`;
-          els.listingFeeEstimateText.className = 'font-mono font-bold text-emerald-300';
-        }
-      }
-
-      function openListIdModal() {
-        els.newIdPrice.value = nprToInputValue(14500);
-        updateListingFeeEstimate();
-        els.listIdModal.classList.remove('hidden');
-        els.newIdUid.focus();
-      }
-
-      function closeListIdModal() {
-        els.listIdModal.classList.add('hidden');
-      }
-
-      function openIdActionModal(type, listingId) {
-        const item = state.ffIds.find((f) => f.id === listingId);
-        if (!item) return;
-
-        state.pendingIdAction = { type, listingId: item.id };
-        const isBuy = type === 'BUY';
-
-        els.idActionBadge.textContent = isBuy ? 'INSTANT ESCROW BUY (DEMO)' : 'MAKE AN OFFER (DEMO)';
-        els.idActionModalTitle.textContent = isBuy ? `Buy ${item.nickname}` : `Offer on ${item.nickname}`;
-        els.idActionSummaryBox.innerHTML = `
-          <div class="flex justify-between text-slate-400">
-            <span>Nickname</span>
-            <span class="text-white font-semibold">${escapeHtml(item.nickname)}</span>
-          </div>
-          <div class="flex justify-between text-slate-400">
-            <span>Player UID</span>
-            <span class="font-mono text-cyan-300">${escapeHtml(item.uid)}</span>
-          </div>
-          <div class="flex justify-between text-slate-400">
-            <span>Level &amp; Rank</span>
-            <span class="text-slate-200">Lv.${escapeHtml(item.level)} • ${escapeHtml(item.rank)}</span>
-          </div>
-          <div class="flex justify-between pt-2 border-t border-white/10 text-sm font-bold text-white">
-            <span>Listed Price</span>
-            <span class="font-mono text-emerald-300">${formatMoney(item.priceNpr, { compactNpr: true })}</span>
-          </div>
-        `;
-
-        els.offerInputContainer.classList.toggle('hidden', isBuy);
-        els.offerAmountInput.value = nprToInputValue(Math.round(item.priceNpr * 0.9));
-        els.confirmIdActionBtn.textContent = isBuy
-          ? `Buy Now • ${formatMoney(item.priceNpr, { compactNpr: true })}`
-          : 'Submit Demo Offer';
-
-        els.idActionModal.classList.remove('hidden');
-      }
-
-      function closeIdActionModal() {
-        els.idActionModal.classList.add('hidden');
-        state.pendingIdAction = null;
-      }
-
-      function renderOrderHistory() {
-        try {
-          const filtered = state.orders.filter((ord) => {
-            if (state.orderFilter === 'ALL') return true;
-            return ord.category === state.orderFilter;
-          });
-
-          if (filtered.length === 0) {
-            els.orderHistoryList.innerHTML = `
-              <div class="rounded-2xl border border-dashed border-white/15 bg-panel/60 p-8 text-center text-xs text-slate-400">
-                No records found for this order filter yet.
-              </div>
-            `;
-            return;
-          }
-
-          els.orderHistoryList.innerHTML = filtered.map((ord) => {
-            const badgeTone =
-              ord.category === 'TOPUP'
-                ? 'bg-cyan-500/15 text-cyan-300 border-cyan-400/30'
-                : ord.category === 'ID_TRADE'
-                ? 'bg-violet-500/20 text-violet-200 border-violet-400/35'
-                : ord.category === 'WALLET'
-                ? 'bg-emerald-500/15 text-emerald-300 border-emerald-400/35'
-                : 'bg-amber-500/20 text-amber-300 border-amber-400/35';
-
-            return `
-              <div class="rounded-2xl bg-panel border border-white/10 p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <div class="space-y-1">
-                  <div class="flex items-center gap-2 flex-wrap">
-                    <span class="font-mono text-xs font-bold text-slate-400">${escapeHtml(ord.id)}</span>
-                    <span class="px-2 py-0.5 rounded-full text-[10px] font-bold border ${badgeTone}">
-                      ${escapeHtml(ord.status)}
-                    </span>
-                    <span class="text-[11px] text-slate-500">${escapeHtml(ord.time)}</span>
-                  </div>
-                  <p class="font-display text-sm sm:text-base font-bold text-white">${escapeHtml(ord.title)}</p>
-                  <p class="text-xs text-slate-400">${escapeHtml(ord.meta)}</p>
-                </div>
-
-                <div class="sm:text-right">
-                  <p class="font-mono text-base font-bold text-emerald-300">${formatMoney(ord.amountNpr, { compactNpr: true })}</p>
-                </div>
-              </div>
-            `;
-          }).join('');
-        } catch (err) {
-          console.error('Order history error:', err);
-        }
-      }
-
-      // Digital products catalogue: illustrative NPR prices; demo checkout only.
-      const DIGITAL_PRODUCTS = [
-        {id:'spotify-1',name:'Spotify Premium Gift',category:'APPS',detail:'Official subscription gift option',price:499,icon:'🎵',tag:'Music'},
-        {id:'netflix-1',name:'Netflix Gift Credit',category:'APPS',detail:'Gift credit where officially supported',price:999,icon:'🎬',tag:'Entertainment'},
-        {id:'youtube-1',name:'YouTube Premium Gift',category:'APPS',detail:'Official membership / gift option',price:599,icon:'▶️',tag:'Video'},
-        {id:'crunchy-1',name:'Crunchyroll Gift',category:'APPS',detail:'Anime membership gift option',price:699,icon:'🍥',tag:'Anime'},
-        {id:'pubg-60',name:'PUBG Mobile UC — 60',category:'GAMES',detail:'Top-up for your own Player ID',price:155,icon:'🪖',tag:'UC'},
-        {id:'pubg-325',name:'PUBG Mobile UC — 325',category:'GAMES',detail:'Top-up for your own Player ID',price:799,icon:'🪖',tag:'Popular'},
-        {id:'ml-86',name:'Mobile Legends — 86 Diamonds',category:'GAMES',detail:'Top-up for your own Game ID',price:175,icon:'💎',tag:'Diamonds'},
-        {id:'cod-80',name:'Call of Duty — 80 CP',category:'GAMES',detail:'Points top-up for your own Player ID',price:159,icon:'🎯',tag:'CP'},
-        {id:'roblox-400',name:'Roblox Gift Credit',category:'GIFT',detail:'Official Roblox gift card value',price:650,icon:'🟥',tag:'Roblox'},
-        {id:'google-500',name:'Google Play Gift Credit',category:'GIFT',detail:'Check country and account-region compatibility',price:500,icon:'🎮',tag:'Gift card'}
-      ];
-      function renderDigitalProducts() {
-        const grid = document.getElementById('digitalProductsGrid');
-        if (!grid) return;
-        const q = (document.getElementById('digitalSearchInput').value || '').trim().toLowerCase();
-        const category = document.getElementById('digitalCategorySelect').value;
-        const items = DIGITAL_PRODUCTS.filter(p => (category === 'ALL' || p.category === category) &&
-          (p.name.toLowerCase().includes(q) || p.detail.toLowerCase().includes(q) || p.tag.toLowerCase().includes(q)));
-        grid.innerHTML = items.length ? items.map(p => `
-          <article class="rounded-2xl bg-panel border border-white/10 p-5 flex flex-col gap-4 hover:border-emerald-400/40 transition-colors">
-            <div class="flex items-start justify-between"><div class="w-12 h-12 rounded-2xl bg-panelElev border border-white/10 flex items-center justify-center text-2xl">${p.icon}</div>
-            <span class="text-[10px] font-bold uppercase px-2 py-1 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-400/20">${p.tag}</span></div>
-            <div class="flex-1"><h3 class="font-display font-bold text-white">${escapeHtml(p.name)}</h3><p class="text-xs text-slate-400 mt-1">${escapeHtml(p.detail)}</p></div>
-            <div class="flex items-center justify-between gap-3"><span class="font-mono font-bold text-emerald-300">${formatMoney(p.price, {compactNpr:true})}</span>
-            <button type="button" data-digital-buy="${p.id}" class="px-4 py-2 rounded-xl text-xs font-extrabold text-slate-950 bg-gradient-to-r from-emerald-300 to-cyan-300 hover:brightness-110">Buy demo</button></div>
-          </article>`).join('') : '<div class="col-span-full text-center text-sm text-slate-400 p-10">No products found. Try another search.</div>';
-      }
-      document.getElementById('digitalSearchInput').addEventListener('input', renderDigitalProducts);
-      document.getElementById('digitalCategorySelect').addEventListener('change', renderDigitalProducts);
-      document.getElementById('digitalProductsGrid').addEventListener('click', (e) => {
-        const btn = e.target.closest('[data-digital-buy]');
-        if (!btn) return;
-        const product = DIGITAL_PRODUCTS.find(p => p.id === btn.dataset.digitalBuy);
-        if (!product) return;
-        openCentreCheckout({kind:'DIGITAL_PRODUCT',title:`Demo order: ${product.name}`,
-          detailLabel:`${product.name} • ${product.detail}`,amountNpr:product.price,
-          onComplete(amount, channel) {
-            if (channel === 'Wallet Balance') {
-              if (state.walletNpr < amount) { showToast('Insufficient demo wallet balance. Add demo credit first.', 'info'); return false; }
-              state.walletNpr = Number((state.walletNpr - amount).toFixed(2)); syncGlobalHeader();
-            }
-            addOrderRecord({id:`DIG-${Math.floor(100000 + Math.random()*900000)}`,category:'TOPUP',
-              title:`Demo order: ${product.name}`,meta:`${getAccountTag()} • ${channel} • Demo only — no code delivered`,
-              amountNpr:amount,status:'Demo order only',time:'Just now'});
-            showToast(`Demo order created for ${product.name}. No real product or code was delivered.`, 'info');
-          }});
+    // Category Filter Pills
+    document.querySelectorAll(".cat-pill").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.category = btn.dataset.category;
+        renderCatalog();
       });
+    });
 
-      // Event Bindings
-      els.currencyToggleBtn.addEventListener('click', () => {
-        state.currency = state.currency === 'NPR' ? 'USD' : 'NPR';
-        syncGlobalHeader();
-        renderDiamondPacks();
-        updateTopupSummary();
-        renderFfIdMarketplace();
-        els.newIdPrice.value = nprToInputValue(14500);
-        updateListingFeeEstimate();
-        renderOrderHistory();
-        refreshCentreCheckoutSummary();
-        showToast(
-          state.currency === 'NPR'
-            ? 'Currency switched to Nepali Rupees (NPR / रु.).'
-            : 'Currency switched to US Dollars (USD / $).',
-          'info'
-        );
+    // Quick-Filter Tags
+    document.querySelectorAll(".tag-pill").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.tag = btn.dataset.tag;
+        renderCatalog();
       });
+    });
 
-      els.topupWalletDemoBtn.addEventListener('click', () => {
-        openCentreCheckout({
-          kind: 'WALLET_TOPUP',
-          title: 'Top Up ID SELLER BRO Wallet',
-          detailLabel: 'Add Store Wallet Credit (In-App)',
-          amountNpr: 1000,
-          onComplete(amtNpr, channel) {
-            state.walletNpr = Number((state.walletNpr + amtNpr).toFixed(2));
-            syncGlobalHeader();
-            addOrderRecord({
-              id: `WLT-${Math.floor(10000 + Math.random() * 90000)}`,
-              category: 'WALLET',
-              title: `Wallet Top-Up (+${formatMoney(amtNpr, { compactNpr: true })})`,
-              meta: `${getAccountTag()} • Channel: ${channel}`,
-              amountNpr: amtNpr,
-              status: 'Credited in ID SELLER BRO',
-              time: 'Just now'
-            });
-            showToast(`Added ${formatMoney(amtNpr, { compactNpr: true })} to ID SELLER BRO wallet!`, 'success');
-          }
-        });
+    // Reset Filters Button (Empty State)
+    document.getElementById("resetFiltersBtn").addEventListener("click", () => {
+      state.search = "";
+      state.category = "all";
+      state.tag = "all";
+      searchInput.value = "";
+      clearSearchBtn.classList.add("hidden");
+      clearSearchBtn.classList.remove("flex");
+      renderCatalog();
+    });
+
+    // Header Navigation Category Links
+    document.querySelectorAll("[data-nav-cat]").forEach((link) => {
+      link.addEventListener("click", () => {
+        state.category = link.getAttribute("data-nav-cat");
+        state.tag = "all";
+        renderCatalog();
+        // Close mobile menu if open
+        document.getElementById("mobileMenu").classList.add("hidden");
+        document.getElementById("mobileMenuBtn").setAttribute("aria-expanded", "false");
       });
+    });
 
-      els.googleAuthBtn.addEventListener('click', openGoogleAuthModal);
-      els.closeGoogleAuthBtn.addEventListener('click', closeGoogleAuthModal);
-      els.signOutGoogleBtn.addEventListener('click', signOutGoogleProfile);
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    mobileMenuBtn.addEventListener("click", () => {
+      const isHidden = mobileMenu.classList.toggle("hidden");
+      mobileMenuBtn.setAttribute("aria-expanded", String(!isHidden));
+    });
 
-      els.googlePresetAccountsList.addEventListener('click', (e) => {
-        const btn = e.target.closest('.google-preset-btn');
-        if (!btn) return;
-        const found = GOOGLE_PRESET_ACCOUNTS.find((a) => a.id === btn.dataset.googleId);
-        if (found) {
-          signInWithGoogleProfile(found.name, found.email);
+    // Live Order Form Listeners
+    [itemSelect, playerInput, nameInput, noteInput].forEach((el) => {
+      el.addEventListener("input", () => {
+        updateOrderPreview();
+        if (el === nameInput || el === playerInput) {
+          saveCustomerInfo();
         }
       });
+      el.addEventListener("change", updateOrderPreview);
+    });
 
-      els.customGoogleForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        signInWithGoogleProfile(els.customGoogleName.value, els.customGoogleEmail.value);
-      });
+    // Clear Saved Info Button
+    document.getElementById("clearSavedBtn").addEventListener("click", () => {
+      try {
+        localStorage.removeItem(STORAGE_KEYS.name);
+        localStorage.removeItem(STORAGE_KEYS.player);
+      } catch (e) {}
+      nameInput.value = "";
+      playerInput.value = "";
+      syncSavedIndicator();
+      updateOrderPreview();
+      showToast("Saved Name & Player ID cleared.", "🧹");
+    });
 
-      els.buyPremiumPassBtn.addEventListener('click', () => {
-        openCentreCheckout({
-          kind: 'PRO_PASS',
-          title: 'Buy Premium Pro Pass (In-App)',
-          detailLabel: 'Premium Pro Membership (+Bonus Diamonds & 0% ID Fee)',
-          amountNpr: PRO_PASS_PRICE_NPR,
-          onComplete(amtNpr, channel) {
-            if (channel === 'Wallet Balance') {
-              if (state.walletNpr < amtNpr) {
-                showToast('Insufficient Store Wallet balance for Pro Pass. Use +Top Up first.', 'info');
-                return false;
-              }
-              state.walletNpr = Number((state.walletNpr - amtNpr).toFixed(2));
-            }
-            togglePremiumPro(true);
-            addOrderRecord({
-              id: `PRO-${Math.floor(10000 + Math.random() * 90000)}`,
-              category: 'WALLET',
-              title: 'Premium Pro Pass Activated',
-              meta: `${getAccountTag()} • Paid via ${channel}`,
-              amountNpr: amtNpr,
-              status: 'Active Pro Pass',
-              time: 'Just now'
-            });
-            showToast('Premium Pro Pass unlocked inside ID SELLER BRO!', 'pro');
-          }
-        });
-      });
+    // Form Submit & Quick Copy Preview Button
+    document.getElementById("orderForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!itemSelect.value) {
+        showToast("Please choose a product or package first.", "⚠️");
+        itemSelect.focus();
+        return;
+      }
+      copyTextToClipboard(buildOrderMessage());
+    });
 
-      els.walletFundAmountInput.addEventListener('input', refreshCentreCheckoutSummary);
-      els.checkoutPaymentSelect.addEventListener('change', (e) => {
-        state.selectedPayment = e.target.value;
-        renderPaymentMethods();
-        refreshCentreCheckoutSummary();
-      });
+    document.getElementById("quickCopyPreviewBtn").addEventListener("click", () => {
+      copyTextToClipboard(buildOrderMessage());
+    });
 
-      els.closeCentreCheckoutBtn.addEventListener('click', closeCentreCheckout);
-      els.cancelCentreCheckoutBtn.addEventListener('click', closeCentreCheckout);
-
-      els.confirmCentreCheckoutBtn.addEventListener('click', () => {
-        if (!state.pendingCheckout) return;
-        const cfg = state.pendingCheckout;
-        const amtNpr = cfg.kind === 'WALLET_TOPUP'
-          ? inputAmountToNpr(els.walletFundAmountInput.value)
-          : cfg.amountNpr;
-        const channel = cfg.fixedChannel || els.checkoutPaymentSelect.value;
-
-        if (!amtNpr || amtNpr <= 0) {
-          showToast('Please enter a valid amount.', 'info');
-          return;
-        }
-
-        const result = cfg.onComplete(amtNpr, channel);
-        if (result === false) return;
-        closeCentreCheckout();
-      });
-
-      els.navProToggleBtn.addEventListener('click', () => togglePremiumPro());
-      els.quickEnableProTopupBtn.addEventListener('click', () => togglePremiumPro(true));
-      els.tierComparisonToggleBtn.addEventListener('click', () => togglePremiumPro());
-
-      els.storeTabs.forEach((btn) => {
-        btn.addEventListener('click', () => switchTab(btn.dataset.tab));
-      });
-
-      els.fillSampleUidBtn.addEventListener('click', () => {
-        const samples = ['2498174620', '7739104825', '9182736450', '5540192837'];
-        const picked = samples[Math.floor(Math.random() * samples.length)];
-        els.playerUidInput.value = picked;
-        updateTopupSummary();
-        showToast(`Sample UID ${picked} filled.`, 'info');
-      });
-
-      els.playerUidInput.addEventListener('input', updateTopupSummary);
-      els.serverRegionSelect.addEventListener('change', updateTopupSummary);
-
-      els.diamondPacksContainer.addEventListener('click', (e) => {
-        const card = e.target.closest('.diamond-pack-card');
-        if (!card) return;
-        state.selectedPackId = card.dataset.packId;
-        renderDiamondPacks();
-        updateTopupSummary();
-      });
-
-      els.paymentMethodsContainer.addEventListener('click', (e) => {
-        const card = e.target.closest('.payment-card');
-        if (!card) return;
-        state.selectedPayment = card.dataset.payment;
-        renderPaymentMethods();
-      });
-
-      els.topUpNowBtn.addEventListener('click', () => {
-        try {
-          const uid = els.playerUidInput.value.trim();
-          if (!uid) {
-            showToast('Please enter a Free Fire Player UID first.', 'info');
-            els.playerUidInput.focus();
-            return;
-          }
-
-          const pack = DIAMOND_PACKS.find((p) => p.id === state.selectedPackId) || DIAMOND_PACKS[2];
-          const region = els.serverRegionSelect.value;
-          const bonusLabel = state.isPremiumPro ? `${pack.proBonus} (Premium Pro)` : `${pack.stdBonus} (Standard)`;
-
-          if (state.selectedPayment === 'Wallet Balance') {
-            if (state.walletNpr < pack.priceNpr) {
-              showToast(`Insufficient wallet balance — click +${formatMoney(1000, { compactNpr: true })} to top up wallet.`, 'info');
-              return;
-            }
-            state.walletNpr = Number((state.walletNpr - pack.priceNpr).toFixed(2));
-            syncGlobalHeader();
-          }
-
-          const receiptId = `RCP-${Math.floor(100000 + Math.random() * 900000)}`;
-          addOrderRecord({
-            id: receiptId,
-            category: 'TOPUP',
-            title: `${pack.name} (${bonusLabel})`,
-            meta: `${getAccountTag()} • UID ${uid} • ${region} • ${state.selectedPayment}`,
-            amountNpr: pack.priceNpr,
-            status: 'Completed (Demo)',
-            time: 'Just now'
-          });
-
-          openReceiptModal({
-            id: receiptId,
-            account: getAccountTag(),
-            uid,
-            region,
-            packName: pack.name,
-            bonusLabel,
-            paymentMethod: state.selectedPayment,
-            priceNpr: pack.priceNpr
-          });
-        } catch (err) {
-          console.error('Top-up error:', err);
-          showToast('Unable to process demo top-up.', 'info');
-        }
-      });
-
-      els.closeReceiptBtn.addEventListener('click', closeReceiptModal);
-      els.doneReceiptBtn.addEventListener('click', closeReceiptModal);
-      els.viewOrderHistoryFromReceiptBtn.addEventListener('click', () => {
-        closeReceiptModal();
-        switchTab('orders');
-      });
-
-      // ID Marketplace listeners
-      els.openListIdModalBtn.addEventListener('click', openListIdModal);
-      els.closeListIdModalBtn.addEventListener('click', closeListIdModal);
-      els.cancelListIdBtn.addEventListener('click', closeListIdModal);
-      els.newIdPrice.addEventListener('input', updateListingFeeEstimate);
-
-      els.idSearchInput.addEventListener('input', (e) => {
-        state.idSearchQuery = e.target.value;
-        renderFfIdMarketplace();
-      });
-
-      els.idMarketFilterGroup.addEventListener('click', (e) => {
-        const btn = e.target.closest('.id-mkt-filter');
-        if (!btn) return;
-        state.idFilter = btn.dataset.idFilter;
-        document.querySelectorAll('.id-mkt-filter').forEach((b) => {
-          const active = b.dataset.idFilter === state.idFilter;
-          b.className = active
-            ? 'id-mkt-filter active px-3.5 py-2 rounded-xl text-xs font-bold bg-cyan-400 text-slate-950 cursor-pointer'
-            : 'id-mkt-filter px-3.5 py-2 rounded-xl text-xs font-semibold bg-obsidian text-slate-300 border border-white/10 hover:border-amber-400/50 cursor-pointer';
-        });
-        renderFfIdMarketplace();
-      });
-
-      els.listIdForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        try {
-          const uid = els.newIdUid.value.trim();
-          const nickname = els.newIdNickname.value.trim();
-          const level = Math.max(1, Number(els.newIdLevel.value) || 1);
-          const rank = els.newIdRank.value;
-          const priceNpr = inputAmountToNpr(els.newIdPrice.value);
-          const highlights = els.newIdHighlights.value.trim() || 'Verified FF ID Listing';
-
-          if (!uid || !nickname) {
-            showToast('Please enter UID and Nickname.', 'info');
-            return;
-          }
-
-          const created = {
-            id: `ff-${Date.now()}`,
-            uid,
-            nickname,
-            level,
-            rank,
-            highlights,
-            priceNpr,
-            escrowVerified: true,
-            featuredPro: state.isPremiumPro
-          };
-
-          state.ffIds.unshift(created);
-          addOrderRecord({
-            id: `LST-${Math.floor(1000 + Math.random() * 9000)}`,
-            category: 'ID_LISTING',
-            title: `Listed FF ID: ${nickname}`,
-            meta: `${getAccountTag()} • UID ${uid} • Lv.${level} ${rank} • ${state.isPremiumPro ? '0% Pro Fee' : '5% Fee'}`,
-            amountNpr: priceNpr,
-            status: 'Active Listing (Demo)',
-            time: 'Just now'
-          });
-
-          closeListIdModal();
-          renderFfIdMarketplace();
-          showToast(`Published "${nickname}" (${formatMoney(priceNpr, { compactNpr: true })}) to FF ID Marketplace!`, 'success');
-        } catch (err) {
-          console.error('Publish ID error:', err);
-          showToast('Could not publish FF ID listing.', 'info');
-        }
-      });
-
-      els.ffIdMarketplaceGrid.addEventListener('click', (e) => {
-        const btn = e.target.closest('.id-action-trigger');
-        if (!btn) return;
-        openIdActionModal(btn.dataset.action, btn.dataset.id);
-      });
-
-      els.closeIdActionBtn.addEventListener('click', closeIdActionModal);
-      els.cancelIdActionBtn.addEventListener('click', closeIdActionModal);
-
-      els.confirmIdActionBtn.addEventListener('click', () => {
-        if (!state.pendingIdAction) return;
-        const item = state.ffIds.find((f) => f.id === state.pendingIdAction.listingId);
-        if (!item) return;
-
-        const isBuy = state.pendingIdAction.type === 'BUY';
-        const finalAmtNpr = isBuy ? item.priceNpr : inputAmountToNpr(els.offerAmountInput.value);
-        const itemId = item.id;
-        const itemNickname = item.nickname;
-        const itemUid = item.uid;
-
-        closeIdActionModal();
-
-        openCentreCheckout({
-          kind: 'ID_ESCROW',
-          title: isBuy ? `Escrow Buy: ${itemNickname}` : `Escrow Offer: ${itemNickname}`,
-          detailLabel: `${isBuy ? 'Purchase' : 'Offer'} for UID ${itemUid} (${itemNickname})`,
-          amountNpr: finalAmtNpr,
-          onComplete(amtNpr, channel) {
-            if (channel === 'Wallet Balance') {
-              if (state.walletNpr < amtNpr) {
-                showToast('Insufficient Store Wallet balance. Top up your wallet inside the ID SELLER BRO first.', 'info');
-                return false;
-              }
-              state.walletNpr = Number((state.walletNpr - amtNpr).toFixed(2));
-              syncGlobalHeader();
-            }
-
-            if (isBuy) {
-              state.ffIds = state.ffIds.filter((entry) => entry.id !== itemId);
-              renderFfIdMarketplace();
-            }
-
-            addOrderRecord({
-              id: `ID-${Math.floor(10000 + Math.random() * 90000)}`,
-              category: 'ID_TRADE',
-              title: isBuy ? `Purchased FF ID: ${itemNickname}` : `Offer on ${itemNickname}`,
-              meta: `${getAccountTag()} • UID ${itemUid} • ${channel}`,
-              amountNpr: amtNpr,
-              status: isBuy ? 'Escrow Settled (Demo)' : 'Offer Escrowed (Demo)',
-              time: 'Just now'
-            });
-
-            showToast(
-              isBuy
-                ? `Completed in-app escrow purchase for ${itemNickname} (${formatMoney(amtNpr, { compactNpr: true })})!`
-                : `Submitted in-app escrow offer of ${formatMoney(amtNpr, { compactNpr: true })} for ${itemNickname}!`,
-              'success'
-            );
-          }
-        });
-      });
-
-      els.orderFilterGroup.addEventListener('click', (e) => {
-        const btn = e.target.closest('.order-filter-btn');
-        if (!btn) return;
-        state.orderFilter = btn.dataset.orderFilter;
-        document.querySelectorAll('.order-filter-btn').forEach((b) => {
-          const active = b.dataset.orderFilter === state.orderFilter;
-          b.className = active
-            ? 'order-filter-btn active px-3.5 py-2 rounded-xl text-xs font-bold bg-violet-500 text-white cursor-pointer'
-            : 'order-filter-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-obsidian text-slate-300 border border-white/10 hover:border-cyan-400/40 cursor-pointer';
-        });
-        renderOrderHistory();
-      });
-
-      // Backdrop & Escape handling
-      [els.receiptModal, els.listIdModal, els.idActionModal, els.googleAuthModal, els.centreCheckoutModal].forEach((modal) => {
-        modal.addEventListener('click', (e) => {
-          if (e.target === modal) {
-            closeReceiptModal();
-            closeListIdModal();
-            closeIdActionModal();
-            closeGoogleAuthModal();
-            closeCentreCheckout();
-          }
-        });
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          closeReceiptModal();
-          closeListIdModal();
-          closeIdActionModal();
-          closeGoogleAuthModal();
-          closeCentreCheckout();
-        }
-      });
-
-      // Initial Boot
-      syncGlobalHeader();
-      renderGoogleModalContent();
-      renderPaymentMethods();
-      renderDiamondPacks();
-      updateTopupSummary();
-      renderFfIdMarketplace();
-      updateListingFeeEstimate();
-      renderOrderHistory();
-      renderDigitalProducts();
-    })();
+    // Initialize Storefront
+    populateDropdown();
+    loadSavedCustomerInfo();
+    renderCatalog();
+    updateOrderPreview();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
